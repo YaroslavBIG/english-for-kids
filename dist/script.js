@@ -104,10 +104,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-// Module
-var code = "// extracted by mini-css-extract-plugin";
-// Exports
-module.exports = code;
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 

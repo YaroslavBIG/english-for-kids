@@ -4,7 +4,6 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CLIEngine } = require('eslint');
 
 module.exports = (env, options) => {
   const isProduction = options.mode === 'production';
@@ -22,11 +21,6 @@ module.exports = (env, options) => {
     module: {
       rules: [
         {
-          enforce: 'pre',
-          test: /\.js$/,
-          exclude: /node_modules/,
-          loader: 'eslint-loader',
-        }, {
           test: /\.js$/,
           exclude: /node_modules/,
           use: {
@@ -38,7 +32,7 @@ module.exports = (env, options) => {
         }, {
           test: /\.scss$/,
           use: [
-            'html-loader', MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader',
+            MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader',
           ],
         }, {
           test: /\.(png|svg|jpe?g|gif)$/,
