@@ -1,6 +1,6 @@
 const cards = [
   ['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions'],
-  [
+  [ // Action (A)
     {
       word: 'cry',
       translation: 'плакать',
@@ -50,7 +50,7 @@ const cards = [
       audioSrc: 'audio/jump.mp3',
     },
   ],
-  [
+  [ // Action Set (B)
     {
       word: 'open',
       translation: 'открывать',
@@ -100,7 +100,107 @@ const cards = [
       audioSrc: 'audio/swim.mp3',
     },
   ],
-  [
+  [ // Action (C)
+    {
+      word: 'argue',
+      translation: 'спорить',
+      image: 'img/argue.jpg',
+      audioSrc: 'audio/argue.mp3',
+    },
+    {
+      word: 'build',
+      translation: 'строить',
+      image: 'img/build.jpg',
+      audioSrc: 'audio/build.mp3',
+    },
+    {
+      word: 'carry',
+      translation: 'нести',
+      image: 'img/carry.jpg',
+      audioSrc: 'audio/carry.mp3',
+    },
+    {
+      word: 'catch',
+      translation: 'ловить',
+      image: 'img/catch.jpg',
+      audioSrc: 'audio/catch.mp3',
+    },
+    {
+      word: 'drive',
+      translation: 'водить',
+      image: 'img/drive.jpg',
+      audioSrc: 'audio/drive.mp3',
+    },
+    {
+      word: 'drop',
+      translation: 'падать',
+      image: 'img/drop.jpg',
+      audioSrc: 'audio/drop.mp3',
+    },
+    {
+      word: 'pull',
+      translation: 'тянуть',
+      image: 'img/pull.jpg',
+      audioSrc: 'audio/pull.mp3',
+    },
+    {
+      word: 'push',
+      translation: 'толкать',
+      image: 'img/push.jpg',
+      audioSrc: 'audio/push.mp3',
+    },
+  ],
+  [ // Adjective
+    {
+      word: 'big',
+      translation: 'большой',
+      image: 'img/big.jpg',
+      audioSrc: 'audio/big.mp3',
+    },
+    {
+      word: 'small',
+      translation: 'маленький',
+      image: 'img/small.jpg',
+      audioSrc: 'audio/small.mp3',
+    },
+    {
+      word: 'fast',
+      translation: 'быстрый',
+      image: 'img/fast.jpg',
+      audioSrc: 'audio/fast.mp3',
+    },
+    {
+      word: 'slow',
+      translation: 'медленный',
+      image: 'img/slow.jpg',
+      audioSrc: 'audio/slow.mp3',
+    },
+    {
+      word: 'friendly',
+      translation: 'дружелюбный',
+      image: 'img/friendly.jpg',
+      audioSrc: 'audio/friendly.mp3',
+    },
+    {
+      word: 'unfriendly',
+      translation: 'недружелюбный',
+      image: 'img/unfriendly.jpg',
+      audioSrc: 'audio/unfriendly.mp3',
+    },
+    {
+      word: 'young',
+      translation: 'молодой',
+      image: 'img/young.jpg',
+      audioSrc: 'audio/young.mp3',
+    },
+    {
+      word: 'old',
+      translation: 'старый',
+      image: 'img/old.jpg',
+      audioSrc: 'audio/old.mp3',
+    },
+  ],
+  [ // Animals (A)
     {
       word: 'cat',
       translation: 'кот',
@@ -150,7 +250,7 @@ const cards = [
       audioSrc: 'audio/sheep.mp3',
     },
   ],
-  [
+  [ // Animals (B)
     {
       word: 'bird',
       translation: 'птица',
@@ -200,7 +300,7 @@ const cards = [
       audioSrc: 'audio/dolphin.mp3',
     },
   ],
-  [
+  [ // Clothes
     {
       word: 'skirt',
       translation: 'юбка',
@@ -250,7 +350,7 @@ const cards = [
       audioSrc: 'audio/shoe.mp3',
     },
   ],
-  [
+  [ // Emotion
     {
       word: 'sad',
       translation: 'грустный',

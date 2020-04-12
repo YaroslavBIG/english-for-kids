@@ -37,9 +37,12 @@ module.exports = (env, options) => {
           ],
         }, {
           test: /\.(png|svg|jpe?g|gif)$/,
-          use: [
-            'file-loader',
-          ],
+          use: {
+            loader: 'file-loader',
+              options: {
+                name: '[name].[ext]',
+              },
+          }, 
         }, {
           test: /\.html$/,
           loader: 'html-loader',

@@ -96,7 +96,10 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_Cards__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/Cards */ "./src/js/Cards.js");
+/* harmony import */ var _js_IndexHeader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/IndexHeader */ "./src/js/IndexHeader.js");
 
+
+Object(_js_IndexHeader__WEBPACK_IMPORTED_MODULE_1__["default"])();
 
 /***/ }),
 
@@ -109,7 +112,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var cards = [['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions'], [{
+var cards = [['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions'], [// Action (A)
+{
   word: 'cry',
   translation: 'плакать',
   image: 'img/cry.jpg',
@@ -149,7 +153,8 @@ var cards = [['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set
   translation: 'прыгать',
   image: 'img/jump.jpg',
   audioSrc: 'audio/jump.mp3'
-}], [{
+}], [// Action Set (B)
+{
   word: 'open',
   translation: 'открывать',
   image: 'img/open.jpg',
@@ -189,7 +194,90 @@ var cards = [['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set
   translation: 'плавать',
   image: 'img/swim.jpg',
   audioSrc: 'audio/swim.mp3'
-}], [{
+}], [// Action (C)
+{
+  word: 'argue',
+  translation: 'спорить',
+  image: 'img/argue.jpg',
+  audioSrc: 'audio/argue.mp3'
+}, {
+  word: 'build',
+  translation: 'строить',
+  image: 'img/build.jpg',
+  audioSrc: 'audio/build.mp3'
+}, {
+  word: 'carry',
+  translation: 'нести',
+  image: 'img/carry.jpg',
+  audioSrc: 'audio/carry.mp3'
+}, {
+  word: 'catch',
+  translation: 'ловить',
+  image: 'img/catch.jpg',
+  audioSrc: 'audio/catch.mp3'
+}, {
+  word: 'drive',
+  translation: 'водить',
+  image: 'img/drive.jpg',
+  audioSrc: 'audio/drive.mp3'
+}, {
+  word: 'drop',
+  translation: 'падать',
+  image: 'img/drop.jpg',
+  audioSrc: 'audio/drop.mp3'
+}, {
+  word: 'pull',
+  translation: 'тянуть',
+  image: 'img/pull.jpg',
+  audioSrc: 'audio/pull.mp3'
+}, {
+  word: 'push',
+  translation: 'толкать',
+  image: 'img/push.jpg',
+  audioSrc: 'audio/push.mp3'
+}], [// Adjective
+{
+  word: 'big',
+  translation: 'большой',
+  image: 'img/big.jpg',
+  audioSrc: 'audio/big.mp3'
+}, {
+  word: 'small',
+  translation: 'маленький',
+  image: 'img/small.jpg',
+  audioSrc: 'audio/small.mp3'
+}, {
+  word: 'fast',
+  translation: 'быстрый',
+  image: 'img/fast.jpg',
+  audioSrc: 'audio/fast.mp3'
+}, {
+  word: 'slow',
+  translation: 'медленный',
+  image: 'img/slow.jpg',
+  audioSrc: 'audio/slow.mp3'
+}, {
+  word: 'friendly',
+  translation: 'дружелюбный',
+  image: 'img/friendly.jpg',
+  audioSrc: 'audio/friendly.mp3'
+}, {
+  word: 'unfriendly',
+  translation: 'недружелюбный',
+  image: 'img/unfriendly.jpg',
+  audioSrc: 'audio/unfriendly.mp3'
+}, {
+  word: 'young',
+  translation: 'молодой',
+  image: 'img/young.jpg',
+  audioSrc: 'audio/young.mp3'
+}, {
+  word: 'old',
+  translation: 'старый',
+  image: 'img/old.jpg',
+  audioSrc: 'audio/old.mp3'
+}], [// Animals (A)
+{
   word: 'cat',
   translation: 'кот',
   image: 'img/cat.jpg',
@@ -229,7 +317,8 @@ var cards = [['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set
   translation: 'овца',
   image: 'img/sheep.jpg',
   audioSrc: 'audio/sheep.mp3'
-}], [{
+}], [// Animals (B)
+{
   word: 'bird',
   translation: 'птица',
   image: 'img/bird.jpg',
@@ -269,7 +358,8 @@ var cards = [['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set
   translation: 'дельфин',
   image: 'img/dolphin.jpg',
   audioSrc: 'audio/dolphin.mp3'
-}], [{
+}], [// Clothes
+{
   word: 'skirt',
   translation: 'юбка',
   image: 'img/skirt.jpg',
@@ -309,7 +399,8 @@ var cards = [['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set
   translation: 'туфли',
   image: 'img/shoe.jpg',
   audioSrc: 'audio/shoe.mp3'
-}], [{
+}], [// Emotion
+{
   word: 'sad',
   translation: 'грустный',
   image: 'img/sad.jpg',
@@ -351,6 +442,81 @@ var cards = [['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set
   audioSrc: 'audio/laugh.mp3'
 }]];
 /* harmony default export */ __webpack_exports__["default"] = (cards);
+
+/***/ }),
+
+/***/ "./src/js/IndexHeader.js":
+/*!*******************************!*\
+  !*** ./src/js/IndexHeader.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* eslint-disable import/prefer-default-export */
+
+/* eslint-disable no-unused-vars */
+function indexHeader() {
+  var fragment = document.createDocumentFragment();
+
+  var liCostr = function liCostr(text) {
+    var liFragment = document.createDocumentFragment();
+    var li = document.createElement('li');
+    li.classList.add('menu-mobile_item');
+    liFragment.appendChild(li);
+    var link = document.createElement('a');
+    link.setAttribute('href', '#');
+    link.innerText = text;
+    liFragment.querySelector('li').appendChild(link);
+    return liFragment;
+  };
+
+  var header = document.createElement('div');
+  header.classList.add('header');
+  fragment.append(header);
+  var headerNavigation = document.createElement('nav');
+  headerNavigation.classList.add('header__menu-mobile');
+  fragment.querySelector('.header').append(headerNavigation);
+  var hamburgerButton = document.createElement('span');
+  hamburgerButton.classList.add('header__hamburger');
+  hamburgerButton.classList.add('hamburger');
+  hamburgerButton.setAttribute('id', 'hamburgerButton');
+  fragment.querySelector('.header__menu-mobile').append(hamburgerButton);
+  var hamburgerLine = document.createElement('span');
+  hamburgerLine.classList.add('hamburger__line');
+  fragment.querySelector('#hamburgerButton').append(hamburgerLine);
+  var menuWrapper = document.createElement('div');
+  menuWrapper.classList.add('menu-mobile__wrapper');
+  menuWrapper.setAttribute('id', 'hamburger__menu');
+  fragment.querySelector('.header__menu-mobile').appendChild(menuWrapper);
+  var menuMobile = document.createElement('ul');
+  menuMobile.classList.add('menu-mobile_table');
+  fragment.querySelector('#hamburger__menu').appendChild(menuMobile); // UL
+
+  fragment.querySelector('.menu-mobile_table').appendChild(liCostr('Main Page')); // LI
+
+  fragment.querySelector('.menu-mobile_table').appendChild(liCostr('Action(set B)')); // LI
+
+  fragment.querySelector('.menu-mobile_table').appendChild(liCostr('Action(set C)')); // LI
+
+  fragment.querySelector('.menu-mobile_table').appendChild(liCostr('Adjective')); // LI
+
+  fragment.querySelector('.menu-mobile_table').appendChild(liCostr('Animal(set A)')); // LI
+
+  fragment.querySelector('.menu-mobile_table').appendChild(liCostr('Animal(set B)')); // LI
+
+  fragment.querySelector('.menu-mobile_table').appendChild(liCostr('Clothes')); // LI
+
+  fragment.querySelector('.menu-mobile_table').appendChild(liCostr('Emotion')); // LI
+
+  var switcher = document.createElement('div');
+  switcher.classList.add('switcher');
+  fragment.querySelector('.header').append(switcher);
+  document.body.append(fragment); // add in body
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (indexHeader);
 
 /***/ }),
 
