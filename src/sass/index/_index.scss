@@ -2,6 +2,14 @@ body {
     background-color: #2D303A;
 }
 
+.header {
+    display: none;
+}
+
 .container {
     background-color: rgb(212, 39, 68);
+    display: grid;
+    grid-template-columns: repeat(3, $mainCardsWdidth);
+    grid-template-rows: repeat(4, $mainCardHeight);
+    grid-gap: 40px;
 }

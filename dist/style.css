@@ -1,16 +1,23 @@
 body {
   background-color: #2D303A; }
 
+.header {
+  display: none; }
+
 .container {
-  background-color: #d42744; }
+  background-color: #d42744;
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  grid-template-rows: repeat(4, 260px);
+  grid-gap: 40px; }
 
 .header__menu-mobile {
-  color: #e813da; }
+  color: #e813da;
+  position: fixed; }
 
 .hamburger {
-  position: relative;
+  position: fixed;
   z-index: 100;
-  top: 43%;
   width: 25px;
   height: 20px;
   margin-left: 10px; }
@@ -87,8 +94,8 @@ body {
   line-height: 82px; }
 
 .cards-main {
-  width: 300px;
-  height: 260px;
+  width: inherit;
+  height: inherit;
   background: -webkit-gradient(linear, left top, left bottom, from(#0099ae), color-stop(40%, #00bf82), color-stop(40%, #fff), to(#fff));
   background: linear-gradient(180deg, #0099ae, #00bf82 40%, #fff 0, #fff);
   border-radius: 5px;
@@ -102,7 +109,7 @@ body {
   font-weight: 400;
   text-align: center;
   text-decoration: none;
-  margin: 20px 25px;
+  margin: 0;
   cursor: pointer;
   -webkit-transition: .3s;
   transition: .3s; }
