@@ -48,14 +48,16 @@ module.exports = (env, options) => {
     },
 
     plugins: [
-      new HtmlWebpackPlugin({
-        template: 'index.html',
-      }),
       new MiniCssExtractPlugin({
         filename: 'style.css',
       }),
       new CleanWebpackPlugin({
+        cleanStaleWebpackAssets: false,
+        protectWebpackAssets: false,
         cleanOnceBeforeBuildPatterns: ['**/*'],
+      }),
+      new HtmlWebpackPlugin({
+        template: 'index.html',
       }),
     ],
   };
