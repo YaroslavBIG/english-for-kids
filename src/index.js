@@ -1,1 +1,1 @@
-// @import "js/_cards.js";
+import { cards } from './js/Cards';

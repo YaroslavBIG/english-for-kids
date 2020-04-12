@@ -38,9 +38,7 @@ module.exports = (env, options) => {
         }, {
           test: /\.(png|svg|jpe?g|gif)$/,
           use: [
-            {
-              loader: 'file-loader',
-            },
+            'file-loader',
           ],
         }, {
           test: /\.html$/,
@@ -50,10 +48,6 @@ module.exports = (env, options) => {
     },
 
     plugins: [
-      new CopyPlugin([
-        { from: 'src/img/', to: 'img/', toType: 'dir' },
-        { from: 'src/audio/', to: 'audio/', toType: 'dir' },
-      ]),
       new HtmlWebpackPlugin({
         template: 'index.html',
       }),
@@ -61,8 +55,6 @@ module.exports = (env, options) => {
         filename: 'style.css',
       }),
       new CleanWebpackPlugin({
-        cleanStaleWebpackAssets: false,
-        protectWebpackAssets: true,
         cleanOnceBeforeBuildPatterns: ['**/*'],
       }),
     ],

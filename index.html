@@ -1,13 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>English for kids</title>
 </head>
+
 <body>
-    <h1>English for kids</h1>
-    <div><p>Site under construction. please try again later.</p></div>
+    <div>
+        <div class="header">
+            <div class="header__navigation">
+                <nav class="header__menu-mobile">
+                    <span class="header__hamburger hamburger" id="hamburger__button"><span
+                            class="hamburger__line"></span></span>
+                    <div class="menu-mobile__wrapper hidden" id="hamburger__menu">
+                        <ul class="menu-mobile_table scroll">
+                            <li class="menu-mobile_item"><a href="#home" class="header__menu_active">Main Page</a></li>
+                            <li class="menu-mobile_item"><a href="#set_a">Action(set A)</a></li>
+                            <li class="menu-mobile_item"><a href="#set_b">Action(set B)</a></li>
+                            <li class="menu-mobile_item"><a href="#set_c">Action(set C)</a></li>
+                            <li class="menu-mobile_item"><a href="#adjective">Adjective</a></li>
+                            <li class="menu-mobile_item"><a href="#animal_a">Animal(set A)</a></li>
+                            <li class="menu-mobile_item"><a href="#animal_b">Animal(set B)</a></li>
+                            <li class="menu-mobile_item"><a href="#clothes">Clothes</a></li>
+                            <li class="menu-mobile_item"><a href="#emotion">Emotion</a></li>
+                        </ul>
+                        <div class="blur" id="blur"></div>
+                    </div>
+            </div>
+            <div class="switcher"></div>
+        </div>
+        <main>
+            <div class="container">
+                <div class="cards-main">
+                    <div class="front"></div>
+                    <div class="text"></div>
+                </div>
+            </div>
+        </main>
+    </div>
     <script src="./dist/script.js"></script>
 </body>
+
 </html>
