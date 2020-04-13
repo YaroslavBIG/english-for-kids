@@ -58,11 +58,11 @@ module.exports = (env, options) => {
       new MiniCssExtractPlugin({
         filename: 'style.css',
       }),
-      new CleanWebpackPlugin({
-        cleanStaleWebpackAssets: false,
-        protectWebpackAssets: false,
-        cleanOnceBeforeBuildPatterns: ['**/*'],
-      }),
+      // new CleanWebpackPlugin({
+      //   // cleanStaleWebpackAssets: false,
+      //   // protectWebpackAssets: false,
+      //   cleanOnceBeforeBuildPatterns: ['**/*'],
+      // }),
       new HtmlWebpackPlugin({
         template: 'index.html',
       }),

@@ -25,28 +25,46 @@ function cardsCatGen() {
       const numWord = randomArr.pop();
       const wordObj = selectedCadegory[numWord];
 
+      const cardCategory = document.createElement('div');
+      cardCategory.classList.add('cards-category');
+      fragmentCard.appendChild(cardCategory);
+
       const card = document.createElement('div');
-      card.classList.add('cards-category');
-      fragmentCard.appendChild(card);
+      card.classList.add('card');
+      fragmentCard.querySelector('.cards-category').appendChild(card);
+
+      const cardText = document.createElement('div');
+      cardText.classList.add('card__text');
+      cardText.innerText = wordObj.word; // Front
 
       const front = document.createElement('div');
+      front.classList.add('card__fliped');
       front.classList.add('front');
-      fragmentCard.querySelector('.cards-category').appendChild(front);
-
-      const imgFront = document.createElement('img');
       const srcImg = wordObj.image;
-      imgFront.setAttribute('src', srcImg);
-      imgFront.setAttribute('alt', wordObj.word);
-      fragmentCard.querySelector('.front').appendChild(imgFront);
+      front.setAttribute('style', `background-image: url(${srcImg});`);
+      fragmentCard.querySelector('.card').appendChild(front);
+      fragmentCard.querySelector('.front').appendChild(cardText);
+
+      // const imgFront = document.createElement('img');
+      // const srcImg = wordObj.image;
+      // imgFront.setAttribute('src', srcImg);
+      // imgFront.setAttribute('alt', wordObj.word);
+      // fragmentCard.querySelector('.front').appendChild(imgFront);
+      const cardTextBack = document.createElement('div');
+      cardTextBack.classList.add('card__text');
+      cardTextBack.innerText = wordObj.translation;
 
       const back = document.createElement('div');
+      back.classList.add('card__fliped');
       back.classList.add('back');
-      fragmentCard.querySelector('.cards-category').appendChild(back);
+      back.setAttribute('style', `background-image: url(${srcImg});`);
+      fragmentCard.querySelector('.card').appendChild(back);
+      fragmentCard.querySelector('.back').appendChild(cardTextBack);
 
-      const imgBack = document.createElement('img');
-      imgBack.setAttribute('src', wordObj.image);
-      imgBack.setAttribute('alt', wordObj.translation);
-      fragmentCard.querySelector('.back').appendChild(imgBack);
+      // const imgBack = document.createElement('img');
+      // imgBack.setAttribute('src', wordObj.image);
+      // imgBack.setAttribute('alt', wordObj.translation);
+      // fragmentCard.querySelector('.back').appendChild(imgBack);
 
       fragment.append(fragmentCard);
     }
