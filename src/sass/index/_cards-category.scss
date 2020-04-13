@@ -1,0 +1,15 @@
+.cards-category {
+    display: grid;
+}
+
+.front {
+    img {
+        width: $mainCardsWdidth;
+        height: $mainCardHeight;
+    }
+}
+
+.back {
+    display: none;
+}
+

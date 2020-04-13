@@ -1,5 +1,6 @@
-const cards = [
-  ['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions'],
+/* eslint-disable import/prefer-default-export */
+export const cards = [
+  ['Action (set A)', 'Action (set B)', 'Action (set C)', 'Adjective', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions'],
   [ // Action (A)
     {
       word: 'cry',
@@ -50,7 +51,7 @@ const cards = [
       audioSrc: 'audio/jump.mp3',
     },
   ],
-  [ // Action Set (B)
+  [ // Action (B)
     {
       word: 'open',
       translation: 'открывать',
@@ -403,4 +404,4 @@ const cards = [
 ];
 
 
-export default cards;
+// default cards;

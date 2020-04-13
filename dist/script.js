@@ -95,11 +95,16 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _js_Cards__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/Cards */ "./src/js/Cards.js");
-/* harmony import */ var _js_IndexHeader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/IndexHeader */ "./src/js/IndexHeader.js");
+/* harmony import */ var _js_IndexHeader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/IndexHeader */ "./src/js/IndexHeader.js");
+/* harmony import */ var _js_IndexMain__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/IndexMain */ "./src/js/IndexMain.js");
+/* harmony import */ var _js_CardsCatGen__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/CardsCatGen */ "./src/js/CardsCatGen.js");
+// import { cards } from './js/Cards';
 
 
-Object(_js_IndexHeader__WEBPACK_IMPORTED_MODULE_1__["default"])();
+
+Object(_js_IndexHeader__WEBPACK_IMPORTED_MODULE_0__["default"])();
+Object(_js_IndexMain__WEBPACK_IMPORTED_MODULE_1__["default"])();
+Object(_js_CardsCatGen__WEBPACK_IMPORTED_MODULE_2__["default"])();
 
 /***/ }),
 
@@ -107,12 +112,14 @@ Object(_js_IndexHeader__WEBPACK_IMPORTED_MODULE_1__["default"])();
 /*!*************************!*\
   !*** ./src/js/Cards.js ***!
   \*************************/
-/*! exports provided: default */
+/*! exports provided: cards */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var cards = [['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions'], [// Action (A)
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cards", function() { return cards; });
+/* eslint-disable import/prefer-default-export */
+var cards = [['Action (set A)', 'Action (set B)', 'Action (set C)', 'Adjective', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions'], [// Action (A)
 {
   word: 'cry',
   translation: 'плакать',
@@ -153,7 +160,7 @@ var cards = [['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set
   translation: 'прыгать',
   image: 'img/jump.jpg',
   audioSrc: 'audio/jump.mp3'
-}], [// Action Set (B)
+}], [// Action (B)
 {
   word: 'open',
   translation: 'открывать',
@@ -440,8 +447,76 @@ var cards = [['Action (set A)', 'Action (set B)', 'Animal (set A)', 'Animal (set
   translation: 'смех',
   image: 'img/laugh.jpg',
   audioSrc: 'audio/laugh.mp3'
-}]];
-/* harmony default export */ __webpack_exports__["default"] = (cards);
+}]]; // default cards;
+
+/***/ }),
+
+/***/ "./src/js/CardsCatGen.js":
+/*!*******************************!*\
+  !*** ./src/js/CardsCatGen.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Cards__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Cards */ "./src/js/Cards.js");
+
+
+function cardsCatGen() {
+  var fragment = document.createDocumentFragment();
+  var category = 'Animal (set A)'; //! !!Var!!!!!!!!
+
+  var categoryArr = _Cards__WEBPACK_IMPORTED_MODULE_0__["cards"][0];
+  var getPositionSet = categoryArr.indexOf(category) + 1;
+  var selectedCadegory = _Cards__WEBPACK_IMPORTED_MODULE_0__["cards"][getPositionSet];
+
+  function randomInteger(min, max) {
+    // случайное число от min до (max+1)
+    var rand = min + Math.random() * (max + 1 - min);
+    return Math.floor(rand);
+  }
+
+  var randomArr = [];
+  var selectedCadegoryLen = selectedCadegory.length - 1;
+
+  while (randomArr.length < selectedCadegoryLen + 1) {
+    var num = randomInteger(0, selectedCadegoryLen);
+    if (!randomArr.includes(num)) randomArr.push(num);
+  }
+
+  var cardGen = function cardGen() {
+    while (randomArr.length > 0) {
+      var fragmentCard = document.createDocumentFragment();
+      var numWord = randomArr.pop();
+      var wordObj = selectedCadegory[numWord];
+      var card = document.createElement('div');
+      card.classList.add('cards-category');
+      fragmentCard.appendChild(card);
+      var front = document.createElement('div');
+      front.classList.add('front');
+      fragmentCard.querySelector('.cards-category').appendChild(front);
+      var imgFront = document.createElement('img');
+      var srcImg = wordObj.image;
+      imgFront.setAttribute('src', srcImg);
+      imgFront.setAttribute('alt', wordObj.word);
+      fragmentCard.querySelector('.front').appendChild(imgFront);
+      var back = document.createElement('div');
+      back.classList.add('back');
+      fragmentCard.querySelector('.cards-category').appendChild(back);
+      var imgBack = document.createElement('img');
+      imgBack.setAttribute('src', wordObj.image);
+      imgBack.setAttribute('alt', wordObj.translation);
+      fragmentCard.querySelector('.back').appendChild(imgBack);
+      fragment.append(fragmentCard);
+    }
+  };
+
+  cardGen();
+  document.querySelector('.container').append(fragment);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (cardsCatGen);
 
 /***/ }),
 
@@ -517,6 +592,29 @@ function indexHeader() {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (indexHeader);
+
+/***/ }),
+
+/***/ "./src/js/IndexMain.js":
+/*!*****************************!*\
+  !*** ./src/js/IndexMain.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function indexMain() {
+  var fragment = document.createDocumentFragment();
+  var main = document.createElement('main');
+  fragment.append(main);
+  var container = document.createElement('div');
+  container.classList.add('container');
+  fragment.querySelector('main').appendChild(container);
+  document.body.appendChild(fragment);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (indexMain);
 
 /***/ }),
 

@@ -39,10 +39,10 @@ module.exports = (env, options) => {
           test: /\.(png|svg|jpe?g|gif)$/,
           use: {
             loader: 'file-loader',
-              options: {
-                name: '[name].[ext]',
-              },
-          }, 
+            options: {
+              name: '[name].[ext]',
+            },
+          },
         }, {
           test: /\.html$/,
           loader: 'html-loader',
@@ -51,6 +51,10 @@ module.exports = (env, options) => {
     },
 
     plugins: [
+      new CopyPlugin([
+        { from: 'src/img/', to: 'img/', toType: 'dir' },
+        { from: 'src/audio/', to: 'audio/', toType: 'dir' },
+      ]),
       new MiniCssExtractPlugin({
         filename: 'style.css',
       }),
