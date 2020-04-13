@@ -6,10 +6,18 @@ body {
     display: none;
 }
 
+main {
+    min-height: 100vh;
+    max-width: 99vw;
+}
+
 .container {
     background-color: rgb(212, 39, 68);
+    margin: 5% 5%;
+    padding: 3% 2% 0% 7.5%;
     display: grid;
-    grid-template-columns: repeat(3, $mainCardsWdidth);
-    grid-template-rows: repeat(4, $mainCardHeight);
-    grid-gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 1rem;
+    margin-inline-start: auto;
+    margin-inline-end: auto;    
 }

@@ -61,6 +61,12 @@ function cardsCatGen() {
       fragmentCard.querySelector('.card').appendChild(back);
       fragmentCard.querySelector('.back').appendChild(cardTextBack);
 
+      const buttonRotate = document.createElement('div');
+      buttonRotate.classList.add('card__button-rotate');
+      const buttonRotateImg = 'img/rotate.png';
+      buttonRotate.setAttribute('style', `background-image: url(${buttonRotateImg});`);
+      fragmentCard.querySelector('.card').appendChild(buttonRotate);
+
       // const imgBack = document.createElement('img');
       // imgBack.setAttribute('src', wordObj.image);
       // imgBack.setAttribute('alt', wordObj.translation);
