@@ -16,11 +16,11 @@ main {
 .container {
     background-color: #d42744;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(46vh, 1fr));
-    grid-gap: 0.5vh;
+    grid-template-columns: repeat(auto-fit, minmax($containerGrid, 1fr));
+    grid-gap: 6vh;
     justify-content: space-around;
     align-content: space-evenly;
-    padding-top: 5vh;
+    padding: 10vh 5vh;
 }
 
 .wrapper {

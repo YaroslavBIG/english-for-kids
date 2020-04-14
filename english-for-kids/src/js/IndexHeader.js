@@ -6,7 +6,6 @@ function indexHeader() {
     const li = document.createElement('li');
     li.classList.add('menu-mobile_item');
     liFragment.appendChild(li);
-
     const link = document.createElement('a');
     link.setAttribute('href', '#');
     link.innerText = text;
@@ -42,15 +41,8 @@ function indexHeader() {
   const menuMobile = document.createElement('ul');
   menuMobile.classList.add('menu-mobile_table');
   fragment.querySelector('#hamburger__menu').appendChild(menuMobile); // UL
-
-  fragment.querySelector('.menu-mobile_table').appendChild(liCostr('Main Page')); // LI
-  fragment.querySelector('.menu-mobile_table').appendChild(liCostr('Action(set B)')); // LI
-  fragment.querySelector('.menu-mobile_table').appendChild(liCostr('Action(set C)')); // LI
-  fragment.querySelector('.menu-mobile_table').appendChild(liCostr('Adjective')); // LI
-  fragment.querySelector('.menu-mobile_table').appendChild(liCostr('Animal(set A)')); // LI
-  fragment.querySelector('.menu-mobile_table').appendChild(liCostr('Animal(set B)')); // LI
-  fragment.querySelector('.menu-mobile_table').appendChild(liCostr('Clothes')); // LI
-  fragment.querySelector('.menu-mobile_table').appendChild(liCostr('Emotion')); // LI
+  const links = ['Main Page', 'Action (set A)', 'Action (set B)', 'Action (set C)', 'Adjective', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions'];
+  links.forEach((link) => { fragment.querySelector('.menu-mobile_table').appendChild(liCostr(link)); });
 
   const switcher = document.createElement('div');
   switcher.classList.add('switcher');

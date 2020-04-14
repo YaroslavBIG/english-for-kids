@@ -1,8 +1,8 @@
 import { cards } from './Cards';
 
-function cardsCatGen() {
+function cardsCatGen(cat) {
   const fragment = document.createDocumentFragment();
-  const category = 'Animal (set A)'; //! !!Var!!!!!!!!
+  const category = cat;
   const categoryArr = cards[0];
   const getPositionSet = categoryArr.indexOf(category) + 1;
   const selectedCadegory = cards[getPositionSet];
@@ -45,11 +45,6 @@ function cardsCatGen() {
       fragmentCard.querySelector('.card').appendChild(front);
       fragmentCard.querySelector('.front').appendChild(cardText);
 
-      // const imgFront = document.createElement('img');
-      // const srcImg = wordObj.image;
-      // imgFront.setAttribute('src', srcImg);
-      // imgFront.setAttribute('alt', wordObj.word);
-      // fragmentCard.querySelector('.front').appendChild(imgFront);
       const cardTextBack = document.createElement('div');
       cardTextBack.classList.add('card__text');
       cardTextBack.innerText = wordObj.translation;
@@ -67,16 +62,14 @@ function cardsCatGen() {
       buttonRotate.setAttribute('style', `background-image: url(${buttonRotateImg});`);
       fragmentCard.querySelector('.card').appendChild(buttonRotate);
 
-      // const imgBack = document.createElement('img');
-      // imgBack.setAttribute('src', wordObj.image);
-      // imgBack.setAttribute('alt', wordObj.translation);
-      // fragmentCard.querySelector('.back').appendChild(imgBack);
-
       fragment.append(fragmentCard);
     }
   };
   cardGen();
-  document.querySelector('.container').append(fragment);
+
+  const container = document.querySelector('.container');
+  container.innerHTML = '';
+  container.append(fragment);
 }
 
 

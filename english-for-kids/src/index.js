@@ -1,9 +1,10 @@
 import indexHeader from './js/IndexHeader';
 import indexMain from './js/indexMain';
-import cardsCatGen from './js/CardsCatGen';
+import cardsMainGen from './js/CardsMainGen';
 import addEvents from './js/Events';
+
 
 indexHeader();
 indexMain();
-cardsCatGen();
+cardsMainGen();
 addEvents();

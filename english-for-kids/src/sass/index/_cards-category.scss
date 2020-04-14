@@ -2,21 +2,21 @@
   display: grid;
   justify-self: center;
   align-self: center;
+  perspective: 500px;
 }
 
 .card {
   width: $mainCardsWdidth;
   height: $mainCardHeight;
-
-  transition: transform 1s;
   transform-style: preserve-3d;
+  transition: transform 1s;
   cursor: pointer;
   position: relative;
+  box-sizing: border-box;
 }
 
 .card__text {
-  position: absolute;
-  top: 74%;
+  margin-top: 66%;
   background-color: white;
   width: 100%;
   line-height: $mainCardTextHeight;
@@ -33,7 +33,7 @@
   background-size: 32px;
   background-repeat: no-repeat;
   background-position: center 16px;
-  bottom: 10%;
+  bottom: 0px;
   right: 0px;
   -webkit-transition: .3s;
   transition: .3s;
@@ -52,6 +52,9 @@
   color: white;
   font-weight: bold;
   font-size: 40px;
+  overflow: hidden;
+  border: 1px solid $colorBorderCard;
+  border-radius: 30px;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   background-size: contain;
@@ -60,9 +63,10 @@
 
 .back {
   transform: rotateY(180deg);
+  transform-style: preserve-3d;
 }
 
-.card.is-flipped {
+.is-flipped {
   transform: rotateY(180deg);
 }
 
