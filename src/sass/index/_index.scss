@@ -4,7 +4,8 @@ body {
 }
 
 .header {
-    display: none;
+    position: relative;
+    top: -8vh;
 }
 
 main {
@@ -13,12 +14,15 @@ main {
 }
 
 .container {
-    background-color: rgb(212, 39, 68);
-    margin: 5% 5%;
-    padding: 3% 2% 0% 7.5%;
+    background-color: #d42744;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    grid-gap: 1rem;
-    margin-inline-start: auto;
-    margin-inline-end: auto;    
+    grid-template-columns: repeat(auto-fit, minmax(46vh, 1fr));
+    grid-gap: 0.5vh;
+    justify-content: space-around;
+    align-content: space-evenly;
+    padding-top: 5vh;
+}
+
+.wrapper {
+    margin-top: 10vh;
 }

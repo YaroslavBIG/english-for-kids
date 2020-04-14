@@ -1,5 +1,7 @@
 .cards-category {
   display: grid;
+  justify-self: center;
+  align-self: center;
 }
 
 .card {
@@ -26,17 +28,21 @@
 
 .card__button-rotate {
   position: absolute;
-  width: 50px;
+  width: 57px;
   height: 50px;
   background-size: 32px;
   background-repeat: no-repeat;
   background-position: center 16px;
-  bottom: 30px;
-  right: 5px;
+  bottom: 10%;
+  right: 0px;
   -webkit-transition: .3s;
   transition: .3s;
   -webkit-filter: grayscale(1);
   filter: grayscale(1);
+    &:hover {
+      filter: none;
+      -webkit-filter: none;
+}
 }
 
 .card__fliped {

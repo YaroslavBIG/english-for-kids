@@ -1,5 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable no-unused-vars */
 function indexHeader() {
   const fragment = document.createDocumentFragment();
 
@@ -37,6 +35,7 @@ function indexHeader() {
 
   const menuWrapper = document.createElement('div');
   menuWrapper.classList.add('menu-mobile__wrapper');
+  menuWrapper.classList.add('hidden');
   menuWrapper.setAttribute('id', 'hamburger__menu');
   fragment.querySelector('.header__menu-mobile').appendChild(menuWrapper);
 

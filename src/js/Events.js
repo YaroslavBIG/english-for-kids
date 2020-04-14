@@ -17,6 +17,20 @@ function addEvents() {
       });
     });
   });
+
+  // Hamburger
+  const hamburger = document.getElementById('hamburgerButton');
+  const menuHamburger = document.getElementById('hamburger__menu');
+  const wrapper = document.querySelector('.wrapper');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('hamburger_rotate');
+    menuHamburger.classList.toggle('hidden');
+
+    wrapper.addEventListener('click', () => {
+      hamburger.classList.remove('hamburger_rotate');
+      menuHamburger.classList.add('hidden');
+    });
+  });
 }
 
 export default addEvents;
