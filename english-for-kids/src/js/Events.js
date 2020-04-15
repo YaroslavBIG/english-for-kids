@@ -11,7 +11,7 @@ function addEvents() {
     const cardText = eventCont.target.innerText;
     const eventClasses = eventCont.target.classList.value;
     const eventId = eventCont.target.id;
-    const audio = cardText.length < 8 ? new Audio(`audio/${cardText}.mp3`) : false;
+    const audio = cardText.length < 8 && cardText.length !== 0 ? new Audio(`audio/${cardText}.mp3`) : false;
 
     if (audio) {
       audio.play();
