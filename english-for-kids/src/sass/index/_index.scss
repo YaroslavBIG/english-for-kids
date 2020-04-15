@@ -4,8 +4,9 @@ body {
 }
 
 .header {
-    position: relative;
-    top: -8vh;
+    display: grid;
+    justify-content: end;
+    margin-top: 3%;
 }
 
 main {

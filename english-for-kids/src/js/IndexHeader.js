@@ -14,7 +14,7 @@ function indexHeader() {
     return liFragment;
   };
 
-  const header = document.createElement('div');
+  const header = document.createElement('header');
   header.classList.add('header');
   fragment.append(header);
 
@@ -43,11 +43,32 @@ function indexHeader() {
   fragment.querySelector('#hamburger__menu').appendChild(menuMobile); // UL
   const links = ['Main Page', 'Action (set A)', 'Action (set B)', 'Action (set C)', 'Adjective', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions'];
   links.forEach((link) => { fragment.querySelector('.menu-mobile_table').appendChild(liCostr(link)); });
-
+  // Switcher
   const switcher = document.createElement('div');
   switcher.classList.add('switcher');
   fragment.querySelector('.header').append(switcher);
-  document.body.append(fragment); // add in body
+
+  const switcherCheckbox = document.createElement('input');
+  switcherCheckbox.setAttribute('type', 'checkbox');
+  switcherCheckbox.setAttribute('name', 'switcher');
+  switcherCheckbox.setAttribute('class', 'switcher__checkbox');
+  switcherCheckbox.setAttribute('id', 'myswitcher');
+  fragment.querySelector('.switcher').append(switcherCheckbox);
+
+  const switcherLabel = document.createElement('label');
+  switcherLabel.setAttribute('class', 'switcher__label');
+  switcherLabel.setAttribute('for', 'myswitcher');
+  fragment.querySelector('.switcher').append(switcherLabel);
+
+  const switcherInner = document.createElement('span');
+  switcherInner.setAttribute('class', 'switcher__inner');
+  fragment.querySelector('.switcher__label').append(switcherInner);
+  const switcherSwitch = document.createElement('span');
+  switcherSwitch.setAttribute('class', 'switcher__switch');
+  fragment.querySelector('.switcher__label').append(switcherSwitch);
+
+
+  document.body.append(fragment); // add all in body
 }
 
 export default indexHeader;
