@@ -8,9 +8,14 @@ function addEvents() {
 
   document.body.addEventListener('click', (eventCont) => {
     const eventText = eventCont.target.parentElement.innerText;
+    const cardText = eventCont.target.innerText;
     const eventClasses = eventCont.target.classList.value;
     const eventId = eventCont.target.id;
+    const audio = cardText.length < 8 ? new Audio(`audio/${cardText}.mp3`) : false;
 
+    if (audio) {
+      audio.play();
+    }
     if (links.includes(eventText)) {
       cardsCatGen(eventText);
     }
