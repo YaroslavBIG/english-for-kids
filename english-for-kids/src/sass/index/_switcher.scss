@@ -31,29 +31,28 @@
     line-height: 28px;
     font-size: 30px; 
     color: white; 
-    font-family: Trebuchet, 
-    Arial, sans-serif; 
+    font-family: Arial, sans-serif; 
     font-weight: bold;
     box-sizing: border-box;
 }
 .switcher__inner:before {
-    content: "TRAIN";
-    padding-left: 21px;
-    background-color: #8D92D6; 
-    color: #FFFFFF;
-}
-.switcher__inner:after {
     content: "PLAY";
-    padding-right: 21px;
+    padding-right: 66px;
     background-color: #8D92D6; 
     color: #FFFFFF;
     text-align: right;
+}
+.switcher__inner:after {
+    content: "TRAIN";
+    padding-left: 55px;
+    background-color: #8D92D6; 
+    color: #FFFFFF;
 }
 .switcher__switch {
     display: block; 
     width: 48px; 
     margin: -10px;
-    background: #DE4C4C;
+    background: #27CCF5;
     position: absolute; 
     top: 0;
     bottom: 0;
@@ -67,5 +66,5 @@
 }
 .switcher__checkbox:checked + .switcher__label .switcher__switch {
     right: 0px; 
-    background-color: #27CCF5; 
+    background-color: #feb46b; 
 }

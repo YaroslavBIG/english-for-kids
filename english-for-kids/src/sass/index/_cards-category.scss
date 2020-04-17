@@ -23,7 +23,7 @@
   font-size: 2rem;
   text-align: center;
   color: black;
-  //pointer-events: none;
+  user-select: none;
 }
 
 .card__button-rotate {
@@ -68,6 +68,11 @@
 
 .is-flipped {
   transform: rotateY(180deg);
+}
+
+.cards-category--cover {
+  background-size: cover;
+  background-position: 50%;
 }
 
 .display__none {

@@ -4,6 +4,9 @@ function cardsMainGen() {
   const fragmentMain = document.createDocumentFragment();
   const category = cards[0];
   const cardImage = [1, 7, 5, 4, 0, 0, 2, 6];
+  const gameMode = localStorage.getItem('gameMode');
+  // const cardsMain = document.querySelectorAll('.card__main');
+  const classOrange = 'cards-main--orange';
 
   for (let count = 0; count < category.length; count += 1) {
     const curretCategory = category[count];
@@ -15,6 +18,7 @@ function cardsMainGen() {
 
     const card = document.createElement('div');
     card.classList.add('card__main');
+    gameMode === 'true' ? card.classList.add(classOrange) : card.classList.remove(classOrange);
     fragment.appendChild(card);
 
     const cardFront = document.createElement('div');
