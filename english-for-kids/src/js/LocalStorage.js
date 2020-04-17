@@ -8,5 +8,3 @@ function localStoragePage(page = 'Main Page') {
 }
 
 export { localSrorageInit, localStoragePage };
-// export default localStoragePage;
-// export default localSrorageInit;

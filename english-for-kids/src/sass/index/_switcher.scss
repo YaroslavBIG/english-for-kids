@@ -66,5 +66,5 @@
 }
 .switcher__checkbox:checked + .switcher__label .switcher__switch {
     right: 0px; 
-    background-color: #feb46b; 
+    background-color: $colorPlay; 
 }

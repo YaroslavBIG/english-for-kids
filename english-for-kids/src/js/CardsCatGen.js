@@ -46,15 +46,11 @@ function cardsCatGen(cat) {
       fragmentCard.querySelector('.card').appendChild(front);
 
       const cardText = document.createElement('div');
-        cardText.classList.add('card__text');
-        cardText.innerText = wordObj.word; // Front
-        fragmentCard.querySelector('.front').appendChild(cardText);
-      
+      cardText.classList.add('card__text');
+      cardText.innerText = wordObj.word; // Front
+      fragmentCard.querySelector('.front').appendChild(cardText);
+    
       const buttonRotate = document.createElement('div');
-      buttonRotate.classList.add('card__button-rotate');
-      const buttonRotateImg = 'img/rotate.png';
-      buttonRotate.setAttribute('style', `background-image: url(${buttonRotateImg});`);
-      fragmentCard.querySelector('.card').appendChild(buttonRotate);
 
 
       if(gameMode !== 'true') {
@@ -73,16 +69,26 @@ function cardsCatGen(cat) {
         back.setAttribute('style', `background-image: url(${srcImg});`);
         fragmentCard.querySelector('.card').appendChild(back);
         fragmentCard.querySelector('.back').appendChild(cardTextBack);
+
+        
+        buttonRotate.classList.add('card__button-rotate');
+        const buttonRotateImg = 'img/rotate.png';
+        buttonRotate.setAttribute('style', `background-image: url(${buttonRotateImg});`);
+        fragmentCard.querySelector('.card').appendChild(buttonRotate);
       }
       if(gameMode === 'true') {
         front.classList.add('cards-category--cover');
         buttonRotate.classList.add('display__none');
-        cardText.classList.add('display__none')
+        cardText.classList.add('display__none');
         }
       
       fragment.append(fragmentCard);
     }
   };
+
+  const buttonStart = document.querySelector('.button__start').classList;
+  gameMode === 'true' ? buttonStart.remove('display__none') : buttonStart.add('display__none');
+
   cardGen();
   localStorage.setItem('words', currentWords);
   console.log(localStorage.words.trim().split(' '));

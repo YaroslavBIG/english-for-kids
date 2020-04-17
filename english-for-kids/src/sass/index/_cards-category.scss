@@ -70,6 +70,19 @@
   transform: rotateY(180deg);
 }
 
+.button__start {
+  position: absolute;
+  margin: 1% 10%;
+  border-radius: 11px;
+  height: 7%;
+  width: 80%;
+  font-size: 1.5rem;
+  text-align: center;
+  color: black;
+  user-select: none;
+  background-color: $colorPlay;
+}
+
 .cards-category--cover {
   background-size: cover;
   background-position: 50%;
