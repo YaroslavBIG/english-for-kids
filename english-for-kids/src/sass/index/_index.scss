@@ -1,5 +1,5 @@
 body {
-    background-color: #2D303A;
+    background-color: $backgroundPrimary;
     margin: 0px 0px 0px 5px;
 }
 
@@ -15,7 +15,7 @@ main {
 }
 
 .container {
-    background-color: #d42744;
+    background-color: $backgroundPrimary;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax($containerGrid, 1fr));
     grid-gap: 6vh;

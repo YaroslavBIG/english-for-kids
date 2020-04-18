@@ -3,6 +3,21 @@
   justify-self: center;
   align-self: center;
   perspective: 500px;
+  border-radius: 30px;
+  -webkit-box-shadow: 10px 10px 11px 7px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    10px 10px 11px 7px rgba(50, 50, 50, 0.75);
+box-shadow:         10px 10px 11px 7px rgba(50, 50, 50, 0.75);
+-webkit-transition: 0.3s;
+ -moz-transition: 0.3s;
+ -ms-transition: 0.3s;
+ -o-transition: 0.3s;
+ transition: 0.3s;
+
+&:active {
+ -webkit-box-shadow: 10px 10px 11px 7px rgba(50, 50, 50, 0.178);
+ -moz-box-shadow:    10px 10px 11px 7px rgba(50, 50, 50, 0.178);
+ box-shadow:         10px 10px 11px 7px rgba(50, 50, 50, 0.178);
+}
 }
 
 .card {
@@ -72,7 +87,7 @@
 
 .button__start {
   position: absolute;
-  margin: 1% 10%;
+  margin: -2% 10%;
   border-radius: 11px;
   height: 7%;
   width: 80%;
@@ -81,6 +96,24 @@
   color: black;
   user-select: none;
   background-color: $colorPlay;
+  border: none;
+  -webkit-box-shadow: 6px 3px 4px 0px rgba(50, 50, 50, 0.75);
+ -moz-box-shadow:   6px 3px 4px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 6px 3px 4px 0px rgba(50, 50, 50, 0.75);
+
+  &:active {
+    -webkit-box-shadow: 6px 3px 4px 0px rgba(50, 50, 50, 0.125);
+ -moz-box-shadow:   6px 3px 4px 0px rgba(50, 50, 50, 0.125);
+  box-shadow: 6px 3px 4px 0px rgba(50, 50, 50, 0.125);
+  transform: translateY(1px);
+   filter: saturate(150%);
+   border: none;
+   outline: none;
+  }
+  &:focus {
+    outline: none;
+  }
+
 }
 
 .cards-category--cover {
@@ -90,4 +123,8 @@
 
 .display__none {
   display: none;
+}
+
+.guessed {
+  opacity: .2;
 }

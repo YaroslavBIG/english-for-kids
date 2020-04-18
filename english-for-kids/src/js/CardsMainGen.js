@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import { cards } from './Cards';
 
 function cardsMainGen() {
@@ -5,7 +6,6 @@ function cardsMainGen() {
   const category = cards[0];
   const cardImage = [1, 7, 5, 4, 0, 0, 2, 6];
   const gameMode = localStorage.getItem('gameMode');
-  // const cardsMain = document.querySelectorAll('.card__main');
   const classOrange = 'cards-main--orange';
 
   for (let count = 0; count < category.length; count += 1) {
@@ -36,7 +36,8 @@ function cardsMainGen() {
 
     fragmentMain.append(fragment);
   }
-
+  const buttonStart = document.querySelector('.button__start').classList;
+  buttonStart.add('display__none');
   const container = document.querySelector('.container');
   container.innerHTML = '';
   container.append(fragmentMain);

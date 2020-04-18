@@ -1,6 +1,8 @@
 .header__menu-mobile {
     color: $hamburgerLine;
     position: absolute;
+    top: -15px;
+    margin-left: -5px;
 }
 
 .hamburger {
@@ -8,7 +10,13 @@
     z-index: 100;
     width: 60px;
     height: 40px;
-    margin-left: 10px;
+    margin: 25px;
+    padding-top: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: $colorlink;
 }
 
 .hamburger__line {
@@ -60,7 +68,7 @@
     z-index: 99;
     min-width: 220px;
     height: 100vh;
-    background-color: #2D303A;
+    background-color: $backgroundPrimaryDark;
     padding-right: 6.5vh;
 }
 
@@ -68,11 +76,7 @@
     display: flex;
     flex-direction: column;
     list-style-type: none;
-    padding-top: 10vh;
-    a {
-        text-decoration: none;
-        color: $colorlink;
-    }
+    padding-top: 10vh;   
 }
 
 
@@ -91,3 +95,8 @@
 .hidden {
     display: none;
 }
+
+
+.header__menu_active {
+    color: #F06C64;
+  }

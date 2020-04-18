@@ -8,6 +8,10 @@ function indexHeader() {
     liFragment.appendChild(li);
     const link = document.createElement('a');
     link.setAttribute('href', '#');
+    link.setAttribute('class', 'header__menu_link');
+    if (text === 'Main Page') {
+      link.setAttribute('class', 'header__menu_active header__menu_link');
+    }
     link.innerText = text;
     liFragment.querySelector('li').appendChild(link);
 

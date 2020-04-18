@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-expressions */
 import { cards } from './Cards';
+import { randomArray } from './Random';
 
 function cardsCatGen(cat) {
   const fragment = document.createDocumentFragment();
@@ -6,21 +8,11 @@ function cardsCatGen(cat) {
   const categoryArr = cards[0];
   const getPositionSet = categoryArr.indexOf(category) + 1;
   const selectedCadegory = cards[getPositionSet];
-  const currentPage = localStorage.page;
-  const gameMode = localStorage.gameMode;
+  const { gameMode } = localStorage;
   let currentWords = '';
 
-  function randomInteger(min, max) {
-    // случайное число от min до (max+1)
-    const rand = min + Math.random() * (max + 1 - min);
-    return Math.floor(rand);
-  }
-  const randomArr = [];
-  const selectedCadegoryLen = selectedCadegory.length - 1;
-  while (randomArr.length < selectedCadegoryLen + 1) {
-    const num = randomInteger(0, selectedCadegoryLen);
-    if (!randomArr.includes(num)) randomArr.push(num);
-  }
+  const selectedCadegoryLen = selectedCadegory.length;
+  const randomArr = randomArray(selectedCadegoryLen);
 
   const cardGen = () => {
     while (randomArr.length > 0) {
@@ -49,11 +41,11 @@ function cardsCatGen(cat) {
       cardText.classList.add('card__text');
       cardText.innerText = wordObj.word; // Front
       fragmentCard.querySelector('.front').appendChild(cardText);
-    
+
       const buttonRotate = document.createElement('div');
 
 
-      if(gameMode !== 'true') {
+      if (gameMode !== 'true') {
         cardText.classList.add('audio');
         fragmentCard.querySelector('.front').appendChild(cardText);
 
@@ -70,18 +62,18 @@ function cardsCatGen(cat) {
         fragmentCard.querySelector('.card').appendChild(back);
         fragmentCard.querySelector('.back').appendChild(cardTextBack);
 
-        
+
         buttonRotate.classList.add('card__button-rotate');
         const buttonRotateImg = 'img/rotate.png';
         buttonRotate.setAttribute('style', `background-image: url(${buttonRotateImg});`);
         fragmentCard.querySelector('.card').appendChild(buttonRotate);
       }
-      if(gameMode === 'true') {
+      if (gameMode === 'true') {
         front.classList.add('cards-category--cover');
         buttonRotate.classList.add('display__none');
         cardText.classList.add('display__none');
-        }
-      
+      }
+
       fragment.append(fragmentCard);
     }
   };
@@ -91,7 +83,7 @@ function cardsCatGen(cat) {
 
   cardGen();
   localStorage.setItem('words', currentWords);
-  console.log(localStorage.words.trim().split(' '));
+  // console.log(localStorage.words.trim().split(' '));
   const container = document.querySelector('.container');
   container.innerHTML = '';
   container.append(fragment);
