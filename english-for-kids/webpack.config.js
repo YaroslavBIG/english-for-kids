@@ -54,6 +54,7 @@ module.exports = (env, options) => {
       new CopyPlugin([
         { from: 'src/img/', to: 'img/', toType: 'dir' },
         { from: 'src/audio/', to: 'audio/', toType: 'dir' },
+        { from: 'src/img/ico/', to: './', toType: 'dir' },
       ]),
       new MiniCssExtractPlugin({
         filename: 'style.css',
