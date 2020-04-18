@@ -1,5 +1,6 @@
 import { randomInteger } from './Random';
 import audioPlay from './Audio';
+import endGame from './endGame';
 
 function game() {
   // console.log(localStorage.words);
@@ -10,9 +11,12 @@ function game() {
   localStorage.setItem('currentWord', currentWord);
   const activeWords = imgArr.join(' ');
   localStorage.setItem('words', activeWords);
-
+  // console.log(currentWord);
   if (currentWord) {
     audioPlay(currentWord);
+  }
+  if (!currentWord) {
+    endGame();
   }
   // console.log('ARRAY', imgArr);
 }

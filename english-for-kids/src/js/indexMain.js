@@ -22,7 +22,6 @@ function indexMain() {
 
   fragment.querySelector('.wrapper').appendChild(container);
 
-
   document.body.appendChild(fragment);
 }
 

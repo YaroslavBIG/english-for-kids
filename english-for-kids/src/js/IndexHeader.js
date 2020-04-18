@@ -71,7 +71,7 @@ function indexHeader() {
   switcherSwitch.setAttribute('class', 'switcher__switch');
   fragment.querySelector('.switcher__label').append(switcherSwitch);
 
-
+  document.body.innerHTML = '';
   document.body.append(fragment); // add all in body
 }
 

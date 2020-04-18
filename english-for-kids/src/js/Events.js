@@ -19,6 +19,8 @@ function addEvents() {
     const cardText = event.target.innerText;
     const eventClasses = event.target.classList.value;
     const eventId = event.target.id;
+    const gameStarted = localStorage.getItem('gameStarted');
+
 
     if (haveAudio) {
       audioPlay(cardText);
@@ -68,8 +70,9 @@ function addEvents() {
     if (elClassList.contains('cards-category--cover')) {
       const currentWord = localStorage.getItem('currentWord');
       const cardClick = event.target.firstChild.innerText;
-      // console.log(cardClick, currentWord);
-      if (cardClick !== currentWord) {
+      const isActive = !elClassList.contains('guessed');
+      // console.log(isActive);
+      if (cardClick !== currentWord && gameStarted === 'true' && isActive) {
         audioPlay('error');
         let errorsCount = Number(localStorage.getItem('errors'));
         errorsCount += 1;
