@@ -13,6 +13,11 @@
     margin: 25px;
     padding-top: 10px;
     transition: transform 1s;
+    -webkit-transition: left 1s;
+    -moz-transition: left 1s;
+    -ms-transition: left 1s;
+    -o-transition: left 1s;
+    left: 0px;
 }
 
 a {
@@ -62,6 +67,12 @@ a {
     -ms-transform: rotate(90deg);
     -o-transform: rotate(90deg);
     transform: rotate(90deg);
+    transition: left 1s;
+    -webkit-transition: left 1s;
+    -moz-transition: left 1s;
+    -ms-transition: left 1s;
+    -o-transition: left 1s;
+    left: 63px;
 }
 
 .menu-mobile__wrapper {

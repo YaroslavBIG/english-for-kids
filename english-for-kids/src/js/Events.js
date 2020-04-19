@@ -96,7 +96,7 @@ function addEvents() {
       menuHamburger.classList.toggle('menu-mobile__wrapper--visible');
     } else {
       hamburger.classList.remove('hamburger_rotate');
-      menuHamburger.classList.toggle('menu-mobile__wrapper--visible');
+      menuHamburger.classList.remove('menu-mobile__wrapper--visible');
     }
   });
 
