@@ -60,9 +60,7 @@ function gameBreak() {
   localStorage.setItem('errors', '0');
   ratingRemove();
   buttonText();
-
 }
-
 
 export {
   game, gameStart, gameStop, buttonText, gameBreak,

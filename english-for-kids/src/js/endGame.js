@@ -15,9 +15,12 @@ function endGame() {
   const img = document.createElement('img');
   img.setAttribute('src', `img/${finalContent}.png`);
   img.setAttribute('alt', finalContent);
+  const elErrors = document.createElement('div');
+  elErrors.innerText = `${errors} Errors`;
 
   wrapper.innerHTML = '';
   wrapper.append(final);
+  if (finalContent === 'failure') { wrapper.querySelector('.final').appendChild(elErrors); }
   wrapper.querySelector('.final').appendChild(img);
 
   audioPlay(finalContent);

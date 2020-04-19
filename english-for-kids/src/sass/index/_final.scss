@@ -2,6 +2,11 @@
     position: relative;
     width: 100%;
     height: 100vh;
+    div {
+      font-size: 10vw;
+      text-align: center;
+      color: #fff;
+    }
     img {
         position: absolute;
         height: inherit;
