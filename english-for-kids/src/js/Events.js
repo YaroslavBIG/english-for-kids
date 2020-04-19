@@ -93,10 +93,10 @@ function addEvents() {
     // hamburger events
     if (eventId === 'hamburgerButton') {
       hamburger.classList.toggle('hamburger_rotate');
-      menuHamburger.classList.toggle('hidden');
+      menuHamburger.classList.toggle('menu-mobile__wrapper--visible');
     } else {
       hamburger.classList.remove('hamburger_rotate');
-      menuHamburger.classList.add('hidden');
+      menuHamburger.classList.toggle('menu-mobile__wrapper--visible');
     }
   });
 

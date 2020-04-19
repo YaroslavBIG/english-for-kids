@@ -38,7 +38,6 @@ function indexHeader() {
 
   const menuWrapper = document.createElement('div');
   menuWrapper.classList.add('menu-mobile__wrapper');
-  menuWrapper.classList.add('hidden');
   menuWrapper.setAttribute('id', 'hamburger__menu');
   fragment.querySelector('.header__menu-mobile').appendChild(menuWrapper);
 
