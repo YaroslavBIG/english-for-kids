@@ -29,6 +29,11 @@
  -ms-transition: 3s;
  -o-transition: 3s;
  transition: 3s;
+ @media screen and (max-width:349px) { 
+      width: 270px;
+      height: 218px;
+  }
+
  &:active {
     -webkit-box-shadow: 10px 10px 11px 7px rgba(50, 50, 50, 0.178);
     -moz-box-shadow:    10px 10px 11px 7px rgba(50, 50, 50, 0.178);

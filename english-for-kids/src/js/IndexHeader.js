@@ -30,7 +30,7 @@ function indexHeader() {
   hamburgerButton.classList.add('header__hamburger');
   hamburgerButton.classList.add('hamburger');
   hamburgerButton.setAttribute('id', 'hamburgerButton');
-  fragment.querySelector('.header__menu-mobile').append(hamburgerButton);
+  fragment.querySelector('.header').append(hamburgerButton);
 
   const hamburgerLine = document.createElement('span');
   hamburgerLine.classList.add('hamburger__line');

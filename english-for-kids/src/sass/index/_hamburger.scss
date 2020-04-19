@@ -3,6 +3,8 @@
     position: absolute;
     top: 15px;
     margin-left: -5px;
+    left: -360px;
+    transition: left 1s;
 }
 
 .hamburger {
@@ -17,12 +19,14 @@
     -moz-transition: left 1s;
     -ms-transition: left 1s;
     -o-transition: left 1s;
+    top: 15px;
     left: 0px;
 }
 
 a {
     text-decoration: none;
     color: $colorlink;
+    width: 200px;
 }
 
 .hamburger__line {
@@ -72,7 +76,7 @@ a {
     -moz-transition: left 1s;
     -ms-transition: left 1s;
     -o-transition: left 1s;
-    left: 63px;
+    left: 75px;
 }
 
 .menu-mobile__wrapper {
@@ -84,8 +88,6 @@ a {
     padding-right: 6.5vh;
     padding-top: 10px;
     margin-top: -15px;
-    left: -360px;
-    transition: left 1s;
 }
 
 .menu-mobile_table {

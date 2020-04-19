@@ -28,6 +28,10 @@ box-shadow:         10px 10px 11px 7px rgba(50, 50, 50, 0.75);
   cursor: pointer;
   position: relative;
   box-sizing: border-box;
+  @media screen and (max-width:349px) { 
+    width: 270px;
+    height: 218px;   
+}
 }
 
 .card__text {
@@ -143,4 +147,19 @@ box-shadow:         10px 10px 11px 7px rgba(50, 50, 50, 0.75);
   width: 100px;
   border-radius: 50%;
   margin: -3% 45%;
+  @media screen and (max-width:930px) and (min-width:660px) { 
+    margin: -5% 43%;
+  }
+
+  @media screen and (max-width:659px) and (min-width:450px) { 
+    margin: -5% 40%;
+  }
+
+  @media screen and (max-width:450px) and (min-width:350px) { 
+    margin: -8% 36%;      
+  }
+
+@media screen and (max-width:349px) { 
+    margin: -8% 34%;
+}
 }

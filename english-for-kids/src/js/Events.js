@@ -9,7 +9,7 @@ import { rating } from './Rating';
 
 function addEvents() {
   const hamburger = document.getElementById('hamburgerButton');
-  const menuHamburger = document.getElementById('hamburger__menu');
+  const headerMenu = document.querySelector('.header__menu-mobile');
   const links = ['Main Page', 'Action (set A)', 'Action (set B)', 'Action (set C)', 'Adjective', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions'];
 
   document.body.addEventListener('click', (event) => {
@@ -20,7 +20,6 @@ function addEvents() {
     const eventClasses = event.target.classList.value;
     const eventId = event.target.id;
     const gameStarted = localStorage.getItem('gameStarted');
-
 
     if (haveAudio) {
       audioPlay(cardText);
@@ -71,14 +70,12 @@ function addEvents() {
       const currentWord = localStorage.getItem('currentWord');
       const cardClick = event.target.firstChild.innerText;
       const isActive = !elClassList.contains('guessed');
-      // console.log(isActive);
       if (cardClick !== currentWord && gameStarted === 'true' && isActive) {
         audioPlay('error');
         let errorsCount = Number(localStorage.getItem('errors'));
         errorsCount += 1;
         localStorage.setItem('errors', errorsCount);
         rating('star-error');
-        // console.log('errors ', errorsCount);
       } else if (cardClick === currentWord) {
         audioPlay('correct');
         elClassList.add('guessed');
@@ -93,10 +90,10 @@ function addEvents() {
     // hamburger events
     if (eventId === 'hamburgerButton') {
       hamburger.classList.toggle('hamburger_rotate');
-      menuHamburger.classList.toggle('menu-mobile__wrapper--visible');
-    } else {
+      headerMenu.classList.toggle('menu-mobile__wrapper--visible');
+    } else if (eventId !== 'hamburger__menu') {
       hamburger.classList.remove('hamburger_rotate');
-      menuHamburger.classList.remove('menu-mobile__wrapper--visible');
+      headerMenu.classList.remove('menu-mobile__wrapper--visible');
     }
   });
 
