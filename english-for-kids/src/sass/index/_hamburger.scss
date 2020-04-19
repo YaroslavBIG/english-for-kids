@@ -70,13 +70,15 @@ a {
     height: 100vh;
     background-color: $backgroundPrimaryDark;
     padding-right: 6.5vh;
+    padding-top: 10px;
+    margin-top: -15px;
 }
 
 .menu-mobile_table {
     display: flex;
     flex-direction: column;
     list-style-type: none;
-    padding-top: 10vh;   
+    padding-top: 10vh;
 }
 
 

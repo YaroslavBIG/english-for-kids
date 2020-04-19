@@ -95,12 +95,16 @@ box-shadow:         10px 10px 11px 7px rgba(50, 50, 50, 0.75);
   text-align: center;
   color: black;
   user-select: none;
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
   background-color: $colorPlay;
   border: none;
   -webkit-box-shadow: 6px 3px 4px 0px rgba(50, 50, 50, 0.75);
- -moz-box-shadow:   6px 3px 4px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:   6px 3px 4px 0px rgba(50, 50, 50, 0.75);
   box-shadow: 6px 3px 4px 0px rgba(50, 50, 50, 0.75);
-
   &:active {
     -webkit-box-shadow: 6px 3px 4px 0px rgba(50, 50, 50, 0.125);
  -moz-box-shadow:   6px 3px 4px 0px rgba(50, 50, 50, 0.125);
@@ -127,4 +131,16 @@ box-shadow:         10px 10px 11px 7px rgba(50, 50, 50, 0.75);
 
 .guessed {
   opacity: .2;
+}
+
+.button__start--rotate {
+  background-image: url(../img/rotate.svg);
+  background-size: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  height: 70px;
+  width: 100px;
+  border-radius: 50%;
+  margin: -3% 45%;
 }

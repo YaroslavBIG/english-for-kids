@@ -29,11 +29,13 @@ function buttonText() {
   // This function appeared thanks eslint and rules no-unused-expressions
   function text() {
     function start() {
+      button.classList.remove('button__start--rotate')
       button.innerText = 'Start Game';
     }
 
     function repeat() {
-      button.innerText = 'Repeat';
+      button.innerText = '';
+      button.classList.add('button__start--rotate');
     }
     return gameMode === 'true' && gameStarted === 'true' ? repeat() : start();
   }
