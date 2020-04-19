@@ -1,7 +1,6 @@
-/* eslint-disable import/prefer-default-export */
-export const cards = [
+export default [
   ['Action (set A)', 'Action (set B)', 'Action (set C)', 'Adjective', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions'],
-  [ // Action (A)
+  [
     {
       word: 'cry',
       translation: 'плакать',
@@ -51,7 +50,7 @@ export const cards = [
       audioSrc: 'audio/jump.mp3',
     },
   ],
-  [ // Action (B)
+  [
     {
       word: 'open',
       translation: 'открывать',
@@ -101,7 +100,7 @@ export const cards = [
       audioSrc: 'audio/swim.mp3',
     },
   ],
-  [ // Action (C)
+  [
     {
       word: 'argue',
       translation: 'спорить',
@@ -151,7 +150,7 @@ export const cards = [
       audioSrc: 'audio/push.mp3',
     },
   ],
-  [ // Adjective
+  [
     {
       word: 'big',
       translation: 'большой',
@@ -201,7 +200,7 @@ export const cards = [
       audioSrc: 'audio/old.mp3',
     },
   ],
-  [ // Animals (A)
+  [
     {
       word: 'cat',
       translation: 'кот',
@@ -251,7 +250,7 @@ export const cards = [
       audioSrc: 'audio/sheep.mp3',
     },
   ],
-  [ // Animals (B)
+  [
     {
       word: 'bird',
       translation: 'птица',
@@ -301,7 +300,7 @@ export const cards = [
       audioSrc: 'audio/dolphin.mp3',
     },
   ],
-  [ // Clothes
+  [
     {
       word: 'skirt',
       translation: 'юбка',
@@ -351,7 +350,7 @@ export const cards = [
       audioSrc: 'audio/shoe.mp3',
     },
   ],
-  [ // Emotion
+  [
     {
       word: 'sad',
       translation: 'грустный',

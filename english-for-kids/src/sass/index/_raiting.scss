@@ -1,28 +1,26 @@
 .rating {
-    display: flex;
+    display: grid;
+    position: absolute;
     justify-content: flex-end;
-    width: 100%;
-    max-width: 1350px;
-    margin: 0 auto;
-    height: 40px;
-    overflow-x: hidden;
-    line-height: 36px;
-    font-size: 36px;
-    color: #fc6262;
+    grid-auto-flow: column;
+    z-index: 100;
+    top: 0;
+    left: 6vw;
+    width: 85vw;
+    overflow: hidden;
+    margin: 0px auto;
 }
 
 .star-error, .star-succes {
-    flex-shrink: 0;
-    width: 40px;
     min-width: 40px;
     height: 40px;
-    background-size: 40px 40px;
+    background-size: contain;
 }
 
-// .star-succes {
-//     background-image: url('../../img/star-win.svg');
-// }
+.star-succes {
+    background-image: url('../img/star-win.svg');
+}
 
-// .star-error {
-//     background-image: url('../../img/star.svg');
-// }
+.star-error {
+    background-image: url('../img/star.svg');
+}

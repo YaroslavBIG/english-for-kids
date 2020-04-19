@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions */
 function localSrorageInit() {
   localStorage.clear();
   localStorage.setItem('gameMode', 'false');

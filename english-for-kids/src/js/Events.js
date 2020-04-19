@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions */
 import cardsMainGen from './CardsMainGen';
 import cardsCatGen from './CardsCatGen';
 import { localStoragePage } from './LocalStorage';
@@ -6,6 +5,7 @@ import {
   gameStart, gameStop, gameBreak, game,
 } from './Game';
 import audioPlay from './Audio';
+import { rating } from './Rating';
 
 function addEvents() {
   const hamburger = document.getElementById('hamburgerButton');
@@ -77,11 +77,13 @@ function addEvents() {
         let errorsCount = Number(localStorage.getItem('errors'));
         errorsCount += 1;
         localStorage.setItem('errors', errorsCount);
+        rating('star-error');
         // console.log('errors ', errorsCount);
       } else if (cardClick === currentWord) {
         audioPlay('correct');
         elClassList.add('guessed');
         localStorage.removeItem('currentWord');
+        rating('star-succes');
         setTimeout(() => {
           game();
         }, 1500);

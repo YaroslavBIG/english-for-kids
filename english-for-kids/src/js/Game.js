@@ -1,6 +1,7 @@
 import { randomInteger } from './Random';
 import audioPlay from './Audio';
 import endGame from './endGame';
+import { ratingRemove } from './Rating';
 
 function game() {
   // console.log(localStorage.words);
@@ -49,12 +50,17 @@ function gameStop() {
   localStorage.setItem('gameStarted', 'false');
   localStorage.removeItem('currentWord');
   localStorage.setItem('errors', '0');
+  ratingRemove();
   buttonText();
 }
 
 function gameBreak() {
   localStorage.setItem('gameStarted', 'false');
+  localStorage.removeItem('currentWord');
+  localStorage.setItem('errors', '0');
+  ratingRemove();
   buttonText();
+
 }
 
 

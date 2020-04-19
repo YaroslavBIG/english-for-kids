@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-expressions */
-import { cards } from './Cards';
+import cards from './Cards';
 
 function cardsMainGen() {
   const fragmentMain = document.createDocumentFragment();
