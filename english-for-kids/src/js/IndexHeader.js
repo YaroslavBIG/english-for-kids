@@ -44,7 +44,7 @@ function indexHeader() {
   const menuMobile = document.createElement('ul');
   menuMobile.classList.add('menu-mobile_table');
   fragment.querySelector('#hamburger__menu').appendChild(menuMobile); // UL
-  const links = ['Main Page', 'Action (set A)', 'Action (set B)', 'Action (set C)', 'Adjective', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions'];
+  const links = ['Main Page', 'Action (set A)', 'Action (set B)', 'Action (set C)', 'Adjective', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions', 'Statistic'];
   links.forEach((link) => { fragment.querySelector('.menu-mobile_table').appendChild(liCostr(link)); });
   // Switcher
   const switcher = document.createElement('div');

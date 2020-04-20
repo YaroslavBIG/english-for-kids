@@ -1,5 +1,6 @@
 import cardsMainGen from './CardsMainGen';
 import cardsCatGen from './CardsCatGen';
+import { tableHeadGen, statisticGen } from './Statistics';
 import { localStoragePage } from './LocalStorage';
 import {
   gameStart, gameStop, gameBreak, game,
@@ -10,7 +11,7 @@ import { rating } from './Rating';
 function addEvents() {
   const hamburger = document.getElementById('hamburgerButton');
   const headerMenu = document.querySelector('.header__menu-mobile');
-  const links = ['Main Page', 'Action (set A)', 'Action (set B)', 'Action (set C)', 'Adjective', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions'];
+  const links = ['Main Page', 'Action (set A)', 'Action (set B)', 'Action (set C)', 'Adjective', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions', 'Statistic'];
 
   document.body.addEventListener('click', (event) => {
     const eventText = event.target.parentElement.innerText;
@@ -29,6 +30,10 @@ function addEvents() {
       if (eventText === 'Main Page') {
         cardsMainGen();
         localStoragePage();
+      }
+      if (eventText === 'Statistic') {
+        tableHeadGen();
+        statisticGen();
       } else {
         cardsCatGen(eventText);
         localStoragePage(eventText);
