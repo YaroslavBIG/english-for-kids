@@ -5,6 +5,7 @@ body {
 
 .header {
     display: grid;
+    position: relative;
     justify-content: end;
     margin-top: 50px;
 }
@@ -25,6 +26,5 @@ main {
 }
 
 .wrapper {
-    position: relative;
     margin-top: 10vh;
 }

@@ -30,6 +30,15 @@ const getWordStats = (word) => {
   const wordArr = stat === null ? setWordStats(word) : localStorage.getItem(word).trim().split(' ');
   return wordArr;
 };
+
+const resetButton = () => {
+  const gameMode = localStorage.getItem('gameMode');
+  localStorage.clear();
+  localSrorageInit();
+  localStorage.setItem('gameMode', gameMode);
+  localStoragePage('Statistic');
+};
+
 export {
-  localSrorageInit, localStoragePage, setWordStats, getWordStats,
+  localSrorageInit, localStoragePage, setWordStats, getWordStats, resetButton,
 };

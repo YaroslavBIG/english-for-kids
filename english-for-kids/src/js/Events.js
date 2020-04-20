@@ -1,7 +1,7 @@
 import cardsMainGen from './CardsMainGen';
 import cardsCatGen from './CardsCatGen';
-import { tableHeadGen, statisticGen } from './Statistics';
-import { localStoragePage, setWordStats } from './LocalStorage';
+import { tableHeadGen, statisticGen, sortGrid } from './Statistics';
+import { localStoragePage, setWordStats, resetButton } from './LocalStorage';
 import {
   gameStart, gameStop, gameBreak, game,
 } from './Game';
@@ -13,6 +13,19 @@ function addEvents() {
   const headerMenu = document.querySelector('.header__menu-mobile');
   const links = ['Main Page', 'Action (set A)', 'Action (set B)', 'Action (set C)', 'Adjective', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions', 'Statistic'];
 
+  function swh(stat) {
+    const tables = document.getElementsByTagName('table');
+    const tableCls = tables[0].classList;
+
+    if (stat) {
+      localStorage.setItem('gameMode', 'true');
+      tableCls.add('table--play');
+    } else {
+      localStorage.setItem('gameMode', 'false');
+      tableCls.remove('table--play');
+    }
+  }
+
   document.body.addEventListener('click', (event) => {
     const eventText = event.target.parentElement.innerText;
     const haveAudio = event.target.classList.contains('audio');
@@ -23,6 +36,7 @@ function addEvents() {
     const gameStarted = localStorage.getItem('gameStarted');
     const cardFront = event.target.parentElement.parentElement.querySelector('.front');
     const cardEngText = cardFront === null ? null : cardFront.innerText;
+    const tableTh = cardText.toString().indexOf('\u2191') !== -1;
 
     if (haveAudio) {
       audioPlay(cardText);
@@ -33,10 +47,10 @@ function addEvents() {
       if (eventText === 'Main Page') {
         cardsMainGen();
         localStoragePage();
-      }
-      if (eventText === 'Statistic') {
+      } else if (eventText === 'Statistic') {
         tableHeadGen();
         statisticGen();
+        localStoragePage('Statistic');
       } else {
         cardsCatGen(eventText);
         localStoragePage(eventText);
@@ -98,6 +112,16 @@ function addEvents() {
       }
     }
 
+    // Statistic events
+    if (eventId === 'resetButton') {
+      resetButton();
+      statisticGen();
+    }
+    if (tableTh) {
+      const th = event.target.tagName === 'TH' ? event.target : event.target.parentElement;
+      sortGrid(th.cellIndex, th.dataset.type);
+    }
+
     // hamburger events
     if (eventId === 'hamburgerButton') {
       hamburger.classList.toggle('hamburger_rotate');
@@ -111,9 +135,13 @@ function addEvents() {
   document.addEventListener('change', (event) => {
     const mySwitcher = event.target;
     const currentPage = localStorage.page;
-    mySwitcher.checked ? gameStart() : gameStop();
-    localStorage.page === 'Main Page' ? cardsMainGen() : cardsCatGen(currentPage);
-    // game();
+
+    if (currentPage === 'Statistic') {
+      mySwitcher.checked ? swh(true) : swh(false);
+    } else {
+      mySwitcher.checked ? gameStart() : gameStop();
+      localStorage.page === 'Main Page' ? cardsMainGen() : cardsCatGen(currentPage);
+    }
   });
 }
 export default addEvents;

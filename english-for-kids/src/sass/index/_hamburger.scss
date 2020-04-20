@@ -1,7 +1,7 @@
 .header__menu-mobile {
     color: $hamburgerLine;
     position: absolute;
-    top: 15px;
+    top: -35px;
     margin-left: -5px;
     left: -360px;
     transition: left 1s;
@@ -19,7 +19,7 @@
     -moz-transition: left 1s;
     -ms-transition: left 1s;
     -o-transition: left 1s;
-    top: 15px;
+    top: -34px;
     left: 0px;
 }
 
@@ -94,7 +94,8 @@ a {
     display: flex;
     flex-direction: column;
     list-style-type: none;
-    padding-top: 10vh;
+    padding-top: 15vh;
+    padding-bottom: 100vh;
 }
 
 

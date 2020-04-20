@@ -5,16 +5,57 @@ table {
     table-layout: fixed;
     border-collapse: collapse;
     box-shadow: 2px 2px 4px 0 rgba(0,0,0,.7);
+    grid-column: 1 / span 2;
 }
 
-
-
 td, th {
-    width: 80px;
-    font-size: 1.2rem;
+    width: 100px;
+    min-width: fit-content;
     text-align: center;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
     user-select: none;
+}
+
+th {
+    cursor: pointer;
+}
+
+.table--play {
+    background-color: $colorPlay;
+}
+
+.button {
+  border-radius: 11px;
+  height: 50px;
+  width: 80%;
+  min-width: fit-content;
+  font-size: 1.5rem;
+  text-align: center;
+  white-space: nowrap;
+  color: black;
+  user-select: none;
+  transition: all .5s;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
+  background-color: $colorPlay;
+  border: none;
+  -webkit-box-shadow: 6px 3px 4px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:   6px 3px 4px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 6px 3px 4px 0px rgba(50, 50, 50, 0.75);
+  &:active {
+    -webkit-box-shadow: 6px 3px 4px 0px rgba(50, 50, 50, 0.125);
+ -moz-box-shadow:   6px 3px 4px 0px rgba(50, 50, 50, 0.125);
+  box-shadow: 6px 3px 4px 0px rgba(50, 50, 50, 0.125);
+  transform: translateY(1px);
+   filter: saturate(150%);
+   border: none;
+   outline: none;
+  }
+  &:focus {
+    outline: none;
+  }
 }

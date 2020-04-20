@@ -271,7 +271,7 @@ export default [
     },
     {
       word: 'giraffe',
-      translation: 'жирафа',
+      translation: 'жираф',
       image: 'img/giraffe.jpg',
       audioSrc: 'audio/giraffe.mp3',
     },
