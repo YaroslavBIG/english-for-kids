@@ -77,7 +77,7 @@ function addEvents() {
       const isActive = !elClassList.contains('guessed');
       if (cardClick !== currentWord && gameStarted === 'true' && isActive) {
         audioPlay('error');
-        let errorsCount = Number(localStorage.getItem('errors'));
+        let errorsCount = parseInt(localStorage.getItem('errors'), 10);
         errorsCount += 1;
         localStorage.setItem('errors', errorsCount);
         rating('star-error');

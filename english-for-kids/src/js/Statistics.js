@@ -55,10 +55,15 @@ function statisticGen() {
       const { translation } = obj;
       fragmentStat.append(tdConstr(translation));
 
-      const getStats = getWordStats(word); // get Stats
+      const getStats = getWordStats(word);
       getStats.forEach((elem) => {
-        fragmentStat.append(tdConstr(Number(elem)));
+        fragmentStat.append(tdConstr(parseInt(elem, 10)));
       });
+      const err = getStats[3];
+      const gues = getStats[2];
+      const errorsRate = parseInt(err / (err + gues), 10) || 0;
+      fragmentStat.append(tdConstr(errorsRate));
+
       tableBody.insertRow().append(fragmentStat);
     }
   });

@@ -1,0 +1,20 @@
+table {
+    margin: 25px auto;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    box-shadow: 2px 2px 4px 0 rgba(0,0,0,.7);
+}
+
+
+
+td, th {
+    width: 80px;
+    font-size: 1.2rem;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    user-select: none;
+}
