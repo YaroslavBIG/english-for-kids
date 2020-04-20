@@ -13,9 +13,9 @@ const setWordStats = (word, click = 0, flip = 0, guess = 0, error = 0) => {
   let newStats = '';
   if (getWord) {
     const wordArr = getWord.trim().split(' ');
-    wordArr[0] = parseInt(wordArr[0], 10) + click; // click stat
-    wordArr[1] = parseInt(wordArr[1], 10) + flip; // flip stat
-    wordArr[2] = parseInt(wordArr[2], 10) + guess; // guess stat
+    wordArr[0] = parseInt(wordArr[0], 10) + click;
+    wordArr[1] = parseInt(wordArr[1], 10) + flip;
+    wordArr[2] = parseInt(wordArr[2], 10) + guess;
     wordArr[3] = parseInt(wordArr[3], 10) + error;
     newStats = wordArr.join(' ');
   } else {

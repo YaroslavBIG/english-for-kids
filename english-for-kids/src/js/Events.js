@@ -9,8 +9,8 @@ import audioPlay from './Audio';
 import { rating } from './Rating';
 
 function addEvents() {
-  const hamburger = document.getElementById('hamburgerButton');
-  const headerMenu = document.querySelector('.header__menu-mobile');
+  const hamburger = () => document.getElementById('hamburgerButton');
+  const headerMenu = () => document.querySelector('.header__menu-mobile');
   const links = ['Main Page', 'Action (set A)', 'Action (set B)', 'Action (set C)', 'Adjective', 'Animal (set A)', 'Animal (set B)', 'Clothes', 'Emotions', 'Statistic'];
 
   function swh(stat) {
@@ -26,15 +26,16 @@ function addEvents() {
     }
   }
 
-  document.body.addEventListener('click', (event) => {
-    const eventText = event.target.parentElement.innerText;
+  document.addEventListener('click', (event) => {
+    const eventIsBody = event.target.tagName === 'BODY';
+    const eventText = eventIsBody ? null : event.target.parentElement.innerText;
     const haveAudio = event.target.classList.contains('audio');
     const elClassList = event.target.classList;
     const cardText = event.target.innerText;
     const eventClasses = event.target.classList.value;
     const eventId = event.target.id;
     const gameStarted = localStorage.getItem('gameStarted');
-    const cardFront = event.target.parentElement.parentElement.querySelector('.front');
+    const cardFront = eventIsBody ? null : event.target.parentElement.parentElement.querySelector('.front');
     const cardEngText = cardFront === null ? null : cardFront.innerText;
     const tableTh = cardText.toString().indexOf('\u2191') !== -1;
 
@@ -124,11 +125,11 @@ function addEvents() {
 
     // hamburger events
     if (eventId === 'hamburgerButton') {
-      hamburger.classList.toggle('hamburger_rotate');
-      headerMenu.classList.toggle('menu-mobile__wrapper--visible');
+      hamburger().classList.toggle('hamburger_rotate');
+      headerMenu().classList.toggle('menu-mobile__wrapper--visible');
     } else if (eventId !== 'hamburger__menu') {
-      hamburger.classList.remove('hamburger_rotate');
-      headerMenu.classList.remove('menu-mobile__wrapper--visible');
+      hamburger().classList.remove('hamburger_rotate');
+      headerMenu().classList.remove('menu-mobile__wrapper--visible');
     }
   });
 

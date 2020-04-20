@@ -9,21 +9,33 @@ function tableHeadGen() {
   const buttonStart = document.getElementById('buttonStart');
   buttonStart.classList.add('display__none');
 
-  const fragment = document.createDocumentFragment();
+  const fragmentTable = document.createDocumentFragment();
+
+  const tableWrapper = document.createElement('div');
+  tableWrapper.classList.add('wrapper_table');
+  fragmentTable.append(tableWrapper);
+
+  const fragmentWrap = fragmentTable.querySelector('.wrapper_table');
 
   const resetButton = document.createElement('button');
   resetButton.classList.add('button');
   resetButton.setAttribute('id', 'resetButton');
   resetButton.innerText = 'Reset';
 
-  fragment.append(resetButton);
+  fragmentWrap.append(resetButton);
 
   const repeatWordButton = document.createElement('button');
   repeatWordButton.classList.add('button');
   repeatWordButton.setAttribute('id', 'repeatWordButton');
   repeatWordButton.innerText = 'Repeat difficult words';
 
-  fragment.append(repeatWordButton);
+  fragmentWrap.append(repeatWordButton);
+
+  const tableWrap = document.createElement('div');
+  tableWrap.classList.add('wrapper_table--scroll');
+  fragmentWrap.append(tableWrap);
+
+  const fragment = fragmentWrap.querySelector('.wrapper_table--scroll');
 
   const table = document.createElement('table');
   table.setAttribute('id', 'grid');
@@ -60,7 +72,7 @@ function tableHeadGen() {
 
   const container = document.querySelector('.container');
   container.innerHTML = '';
-  container.append(fragment);
+  container.append(fragmentTable);
 }
 
 function statisticGen() {
@@ -103,7 +115,7 @@ function statisticGen() {
       const gues = parseInt(getStats[2], 10);
       const errorsRate = parseInt((err / (err + gues)) * 100, 10) || 0;
 
-      fragmentStat.append(tdConstr(`${errorsRate} %`));
+      fragmentStat.append(tdConstr(`${errorsRate}`));
 
       tableBody.insertRow().append(fragmentStat);
     }
@@ -112,12 +124,9 @@ function statisticGen() {
 
 function sortGrid(colNum, type) {
   const tbody = document.querySelector('tbody');
-
   const rowsArray = Array.from(tbody.rows);
-  ;
-  // compare(a, b) сравнивает две строки, нужен для сортировки
   let compare;
-  
+
   switch (type) {
     case 'string':
       compare = function str(rowA, rowB) {
@@ -131,7 +140,6 @@ function sortGrid(colNum, type) {
       break;
   }
 
-  // сортировка
   rowsArray.sort(compare);
 
   tbody.append(...rowsArray);

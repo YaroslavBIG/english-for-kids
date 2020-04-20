@@ -4,7 +4,6 @@ import endGame from './endGame';
 import { ratingRemove } from './Rating';
 
 function game() {
-  // console.log(localStorage.words);
   const imgArr = localStorage.words.trim().split(' ');
   const imgArrLen = imgArr.length;
   const wordPos = randomInteger(0, imgArrLen - 1);
@@ -12,14 +11,12 @@ function game() {
   localStorage.setItem('currentWord', currentWord);
   const activeWords = imgArr.join(' ');
   localStorage.setItem('words', activeWords);
-  // console.log(currentWord);
   if (currentWord) {
     audioPlay(currentWord);
   }
   if (!currentWord) {
     endGame();
   }
-  // console.log('ARRAY', imgArr);
 }
 
 function buttonText() {
@@ -29,7 +26,7 @@ function buttonText() {
   // This function appeared thanks eslint and rules no-unused-expressions
   function text() {
     function start() {
-      button.classList.remove('button__start--rotate')
+      button.classList.remove('button__start--rotate');
       button.innerText = 'Start Game';
     }
 

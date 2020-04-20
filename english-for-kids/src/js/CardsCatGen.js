@@ -82,7 +82,6 @@ function cardsCatGen(cat) {
 
   cardGen();
   localStorage.setItem('words', currentWords);
-  // console.log(localStorage.words.trim().split(' '));
   const container = document.querySelector('.container');
   container.innerHTML = '';
   container.append(fragment);
