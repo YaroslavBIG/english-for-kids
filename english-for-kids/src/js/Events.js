@@ -1,7 +1,7 @@
 import cardsMainGen from './CardsMainGen';
 import cardsCatGen from './CardsCatGen';
 import { tableHeadGen, statisticGen } from './Statistics';
-import { localStoragePage } from './LocalStorage';
+import { localStoragePage, setWordStats } from './LocalStorage';
 import {
   gameStart, gameStop, gameBreak, game,
 } from './Game';
@@ -21,9 +21,12 @@ function addEvents() {
     const eventClasses = event.target.classList.value;
     const eventId = event.target.id;
     const gameStarted = localStorage.getItem('gameStarted');
+    const cardFront = event.target.parentElement.parentElement.querySelector('.front');
+    const cardEngText = cardFront === null ? null : cardFront.innerText;
 
     if (haveAudio) {
       audioPlay(cardText);
+      setWordStats(cardEngText, 1, 0, 0, 0);
     }
     if (links.includes(eventText)) {
       gameBreak();
@@ -50,6 +53,7 @@ function addEvents() {
 
     if (eventClasses === 'card__button-rotate') {
       const targetCard = event.target.parentElement;
+      setWordStats(cardEngText, 0, 1, 0, 0);
       targetCard.classList.add('is-flipped');
       event.target.classList.add('display__none');
       targetCard.addEventListener('mouseleave', () => {
@@ -79,11 +83,13 @@ function addEvents() {
         audioPlay('error');
         let errorsCount = parseInt(localStorage.getItem('errors'), 10);
         errorsCount += 1;
+        setWordStats(currentWord, 0, 0, 0, 1);
         localStorage.setItem('errors', errorsCount);
         rating('star-error');
       } else if (cardClick === currentWord) {
         audioPlay('correct');
         elClassList.add('guessed');
+        setWordStats(currentWord, 0, 0, 1, 0);
         localStorage.removeItem('currentWord');
         rating('star-succes');
         setTimeout(() => {

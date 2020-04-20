@@ -59,10 +59,12 @@ function statisticGen() {
       getStats.forEach((elem) => {
         fragmentStat.append(tdConstr(parseInt(elem, 10)));
       });
-      const err = getStats[3];
-      const gues = getStats[2];
-      const errorsRate = parseInt(err / (err + gues), 10) || 0;
-      fragmentStat.append(tdConstr(errorsRate));
+      console.log(getStats);
+      const err = parseInt(getStats[3], 10);
+      const gues = parseInt(getStats[2], 10);
+      const errorsRate = parseInt((err / (err + gues)) * 100, 10) || 0;
+
+      fragmentStat.append(tdConstr(`${errorsRate} %`));
 
       tableBody.insertRow().append(fragmentStat);
     }

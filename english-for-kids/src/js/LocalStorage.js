@@ -1,5 +1,4 @@
 function localSrorageInit() {
-  localStorage.clear();
   localStorage.setItem('gameMode', 'false');
   localStorage.setItem('gameStarted', 'false');
   localStorage.setItem('errors', '0');
