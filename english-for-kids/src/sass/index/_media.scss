@@ -1,4 +1,6 @@
-@media (hover) , (min-width:0\0) , (min--moz-device-pixel-ratio:0) { 
+@media (hover),
+(min-width:0\0),
+(min--moz-device-pixel-ratio:0) {
     a:hover {
         color: $backgroundSecondaryLight;
         transition: color .3s;
@@ -6,5 +8,26 @@
         -moz-transition: color .3s;
         -ms-transition: color .3s;
         -o-transition: color .3s;
-}
+    }
+
+    button:hover {
+        cursor: pointer;
+    }
+
+    .card__main:hover {
+        -webkit-box-shadow: 10px 10px 11px 7px rgba(50, 50, 50, 0.15);
+        -moz-box-shadow: 10px 10px 11px 7px rgba(50, 50, 50, 0.15);
+        box-shadow: 10px 10px 11px 7px rgba(50, 50, 50, 0.15);
+    }
+
+    .cards-category:hover {
+        -webkit-box-shadow: 10px 10px 11px 7px rgba(50, 50, 50, 0.378);
+        -moz-box-shadow: 10px 10px 11px 7px rgba(50, 50, 50, 0.378);
+        box-shadow: 10px 10px 11px 7px rgba(50, 50, 50, 0.378);
+    }
+
+    .hamburger:hover {
+        cursor: pointer;
+    }
+
 }
