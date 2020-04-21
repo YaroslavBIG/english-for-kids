@@ -57,7 +57,7 @@ function cardsCatGen(cat, word = null) {
       const buttonRotate = document.createElement('div');
 
 
-      if (gameMode !== 'true') {
+      if (gameMode !== 'true' || word) {
         cardText.classList.add('audio');
         fragmentCard.querySelector('.front').appendChild(cardText);
 
@@ -80,7 +80,7 @@ function cardsCatGen(cat, word = null) {
         buttonRotate.setAttribute('style', `background-image: url(${buttonRotateImg});`);
         fragmentCard.querySelector('.card').appendChild(buttonRotate);
       }
-      if (gameMode === 'true') {
+      if (gameMode === 'true' && !word) {
         front.classList.add('cards-category--cover');
         buttonRotate.classList.add('display__none');
         cardText.classList.add('display__none');
@@ -91,7 +91,7 @@ function cardsCatGen(cat, word = null) {
   };
 
   const buttonStart = document.querySelector('.button__start').classList;
-  gameMode === 'true' ? buttonStart.remove('display__none') : buttonStart.add('display__none');
+  gameMode === 'true' && !word ? buttonStart.remove('display__none') : buttonStart.add('display__none');
 
   cardGen();
   if (!word) {

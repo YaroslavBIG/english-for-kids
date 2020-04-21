@@ -33,6 +33,7 @@ function diffWordGen() {
     const container = document.querySelector('.container');
     container.innerHTML = '';
     container.append(fragment);
+    localStorage.setItem('page', 'Difficult Words');
   }
 }
 

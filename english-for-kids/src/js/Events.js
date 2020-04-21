@@ -27,6 +27,14 @@ function addEvents() {
     }
   }
 
+  function swhDiff(stat) { // Function under construction
+    if (stat) {
+      localStorage.setItem('gameMode', 'true');
+    } else {
+      localStorage.setItem('gameMode', 'false');
+    }
+  }
+
   document.addEventListener('click', (event) => {
     const eventIsHtml = event.target.tagName === 'HTML';
     const eventIsBody = event.target.tagName === 'BODY';
@@ -150,6 +158,9 @@ function addEvents() {
 
     if (currentPage === 'Statistic') {
       mySwitcher.checked ? swh(true) : swh(false);
+    }
+    if (currentPage === 'Difficult Words') {
+      mySwitcher.checked ? swhDiff(true) : swhDiff(false); // Function under construction
     } else {
       mySwitcher.checked ? gameStart() : gameStop();
       localStorage.page === 'Main Page' ? cardsMainGen() : cardsCatGen(currentPage);
