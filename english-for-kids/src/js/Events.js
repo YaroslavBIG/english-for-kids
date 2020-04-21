@@ -7,6 +7,7 @@ import {
 } from './Game';
 import audioPlay from './Audio';
 import { rating } from './Rating';
+import diffWordGen from './DifficultWordsGen';
 
 function addEvents() {
   const hamburger = () => document.getElementById('hamburgerButton');
@@ -27,15 +28,22 @@ function addEvents() {
   }
 
   document.addEventListener('click', (event) => {
+    const eventIsHtml = event.target.tagName === 'HTML';
     const eventIsBody = event.target.tagName === 'BODY';
-    const eventText = eventIsBody ? null : event.target.parentElement.innerText;
+    function getTxt() {
+      if (!eventIsHtml && !eventIsBody) {
+        return event.target.parentElement.innerText;
+      }
+      return null;
+    }
+    const eventText = getTxt();
     const haveAudio = event.target.classList.contains('audio');
     const elClassList = event.target.classList;
     const cardText = event.target.innerText;
     const eventClasses = event.target.classList.value;
     const eventId = event.target.id;
     const gameStarted = localStorage.getItem('gameStarted');
-    const cardFront = eventIsBody ? null : event.target.parentElement.parentElement.querySelector('.front');
+    const cardFront = getTxt() === null ? null : event.target.parentElement.parentElement.querySelector('.front');
     const cardEngText = cardFront === null ? null : cardFront.innerText;
     const tableTh = cardText.toString().indexOf('\u2191') !== -1;
 
@@ -117,6 +125,9 @@ function addEvents() {
     if (eventId === 'resetButton') {
       resetButton();
       statisticGen();
+    }
+    if (eventId === 'repeatWordButton') {
+      diffWordGen();
     }
     if (tableTh) {
       const th = event.target.tagName === 'TH' ? event.target : event.target.parentElement;

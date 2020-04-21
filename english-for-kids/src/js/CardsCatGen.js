@@ -1,7 +1,7 @@
 import cards from './Cards';
 import { randomArray } from './Random';
 
-function cardsCatGen(cat) {
+function cardsCatGen(cat, word = null) {
   const fragment = document.createDocumentFragment();
   const category = cat;
   const categoryArr = cards[0];
@@ -11,7 +11,20 @@ function cardsCatGen(cat) {
   let currentWords = '';
 
   const selectedCadegoryLen = selectedCadegory.length;
-  const randomArr = randomArray(selectedCadegoryLen);
+
+
+  const targetWordpos = () => {
+    let str = '';
+    selectedCadegory.forEach((el) => {
+      str += ` ${el.word}`;
+    });
+    const arr = str.trim().split(' ');
+    return arr.indexOf(word);
+  };
+
+  const arr = [];
+  arr.push(targetWordpos());
+  const randomArr = word === null ? randomArray(selectedCadegoryLen) : arr;
 
   const cardGen = () => {
     while (randomArr.length > 0) {
@@ -81,10 +94,15 @@ function cardsCatGen(cat) {
   gameMode === 'true' ? buttonStart.remove('display__none') : buttonStart.add('display__none');
 
   cardGen();
-  localStorage.setItem('words', currentWords);
-  const container = document.querySelector('.container');
-  container.innerHTML = '';
-  container.append(fragment);
+  if (!word) {
+    localStorage.setItem('words', currentWords);
+    const container = document.querySelector('.container');
+    container.innerHTML = '';
+    container.append(fragment);
+  }
+  if (word) {
+    return fragment;
+  }
 }
 
 

@@ -122,11 +122,10 @@ function statisticGen() {
   });
 }
 
-function sortGrid(colNum, type) {
+function sortGrid(colNum, type, handly = false) {
   const tbody = document.querySelector('tbody');
   const rowsArray = Array.from(tbody.rows);
   let compare;
-
   switch (type) {
     case 'string':
       compare = function str(rowA, rowB) {
@@ -141,8 +140,8 @@ function sortGrid(colNum, type) {
   }
 
   rowsArray.sort(compare);
-
-  tbody.append(...rowsArray);
+  if (!handly) { tbody.append(...rowsArray); }
+  if (handly) { return rowsArray; }
 }
 
 export {

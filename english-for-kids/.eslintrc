@@ -6,7 +6,9 @@
         "es6": true
      },
 
-     "rules":{
-        "linebreak-style": 0
-      }
-    }
+     "rules":{ 
+        "no-unused-expressions": 0,
+         "linebreak-style": 0,
+         "consistent-return": 0
+        }
+}
